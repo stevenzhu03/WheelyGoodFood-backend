@@ -32,7 +32,7 @@ function postToBackEnd(form){
         },
         body: JSON.stringify(newSearch)
     })
-    .then(resp => resp.json())
-    .then(search => console.log)
+    // .then(resp => resp.json())
+    // .then(search => console.log)
     
 }
