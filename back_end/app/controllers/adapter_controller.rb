@@ -1,8 +1,11 @@
 class AdapterController < ActionController::API
 
     def yelp
-        byebug
-        puts params
+        location = params[:location]
+        type = params[:type]
+        results = Adapter.search(type, location)
+
+        render json: results
     end
 
 
