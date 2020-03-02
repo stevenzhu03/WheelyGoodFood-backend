@@ -25,7 +25,6 @@
 
 
 
-
   <div id="wheel">
     <link rel="stylesheet" href="main.css" type="text/css" />
     <script type="text/javascript" src="../../front_end/src/Winwheel.js"></script>
@@ -66,30 +65,19 @@
         </table>
     </div>
     <script>
+        let resultsArray = [
+               {'fillStyle' : '#eae56f', 'text' : 'Buger King', "id": ""},
+               {'fillStyle' : '#89f26e', 'text' : 'Taco Bell', "id": ""},
+               {'fillStyle' : '#7de6ef', 'text' : 'Mcdonalds', "id": ""},
+               {'fillStyle' : '#e7706f', 'text' : 'Chicfila', "id": ""},
+               {'fillStyle' : '#eae56f', 'text' : 'Prize 5', "id": ""},
+               {'fillStyle' : '#89f26e', 'text' : 'Prize 6', "id": ""},
+               {'fillStyle' : '#7de6ef', 'text' : 'Prize 7', "id": ""},
+               {'fillStyle' : '#e7706f', 'text' : 'Prize 8', "id": ""}
+            ];
+        
         // Create new wheel object specifying the parameters at creation time.
-        let theWheel = new Winwheel({
-            'numSegments'  : 8,     // Specify number of segments.
-            'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-            'textFontSize' : 28,    // Set font size as desired.
-            'segments'     :        // Define segments including colour and text.
-            [
-               {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-               {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-               {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-               {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-               {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-               {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-               {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-               {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
-            ],
-            'animation' :           // Specify the animation to use.
-            {
-                'type'     : 'spinToStop',
-                'duration' : 5,     // Duration in seconds.
-                'spins'    : 8,     // Number of complete spins.
-                'callbackFinished' : alertPrize
-            }
-        });
+        let theWheel
 
         // Vars used by the code in this page to do power controls.
         let wheelPower    = 0;
@@ -182,7 +170,7 @@
         function alertPrize(indicatedSegment)
         {
             // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
-            alert("You have won " + indicatedSegment.text);
+            alert(indicatedSegment.text +" " +indicatedSegment.id);
         }
     </script>
 </div>

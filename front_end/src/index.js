@@ -33,6 +33,29 @@ function postToBackEnd(form){
         body: JSON.stringify(newSearch)
     })
     .then((response) => response.json())
-    .then(search => console.log(search))
+    .then(search => {
+        console.log(search)
+        for (i=0; i < search.length; i++){
+            resultsArray[i]["text"] = search[i].name
+            resultsArray[i]["id"] = search[i].id
+        }
+
+        theWheel = new Winwheel({
+            'numSegments'  : 8,     // Specify number of segments.
+            'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
+            'textFontSize' : 18,    // Set font size as desired.
+            'segments'     :        // Define segments including colour and text.
+            resultsArray,
+            'animation' :           // Specify the animation to use.
+            {
+                'type'     : 'spinToStop',
+                'duration' : 5,     // Duration in seconds.
+                'spins'    : 8,     // Number of complete spins.
+                'callbackFinished' : alertPrize
+            }
+        });
+        debugger
+    
+    })
     
 }
