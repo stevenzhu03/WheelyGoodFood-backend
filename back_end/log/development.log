@@ -2008,3 +2008,21 @@ Processing by AdapterController#yelp as JSON
 Completed 200 OK in 2285ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 6430)
 
 
+Started POST "/yelp" for ::1 at 2020-03-02 15:34:35 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"Jersey city", "type"=>"pizza", "price"=>"3", "adapter"=>{"location"=>"Jersey city", "type"=>"pizza", "price"=>"3"}}
+Completed 200 OK in 879ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6507)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 16:19:34 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"ny", "type"=>"hot dog", "price"=>"1", "adapter"=>{"location"=>"ny", "type"=>"hot dog", "price"=>"1"}}
+Completed 200 OK in 2393ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6454)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 16:30:55 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"korean ", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"korean ", "price"=>"1"}}
+Completed 200 OK in 1185ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6765)
+
+
