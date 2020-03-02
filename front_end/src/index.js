@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", e =>{
     
     document.addEventListener("click", e =>{
         switch(true) {
-            case(e.target.id === "spin_button"):
+            case(e.target.id === "yelp_search"):
                 e.preventDefault()
                 let form = e.target.parentNode
                 postToBackEnd(form)
@@ -54,7 +54,6 @@ function postToBackEnd(form){
                 'callbackFinished' : alertPrize
             }
         });
-        debugger
     
     })
     
