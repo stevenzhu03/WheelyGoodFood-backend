@@ -8,5 +8,6 @@ class AdapterController < ActionController::API
         render json: results
     end
 
+    
 
 end
