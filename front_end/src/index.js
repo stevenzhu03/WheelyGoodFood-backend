@@ -54,7 +54,24 @@ function postToBackEnd(form){
                 'callbackFinished' : alertPrize
             }
         });
-    
+        
+        
     })
     
+    
 }
+
+        function searchBusiness(indicatedSegment){
+            let businessId = indicatedSegment.id
+            let searchSelection = {id: businessId}
+            fetch('http://localhost:3000/yelp/business', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json',
+                    accept: 'application/json'
+                },
+                body: JSON.stringify(searchSelection)
+            })
+            .then(response => response.json())
+            .then(restaurant => console.log(restaurant))
+        }
