@@ -1677,3 +1677,130 @@ Processing by AdapterController#yelp as JSON
 Completed 200 OK in 1060ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 9853)
 
 
+Started POST "/yelp" for ::1 at 2020-03-02 14:15:21 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Started POST "/yelp" for ::1 at 2020-03-02 14:15:22 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Completed 200 OK in 1926ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 15147)
+
+
+Completed 200 OK in 1212ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 18585)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:33:00 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese ", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese ", "price"=>"1"}}
+Completed 200 OK in 863ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 9697)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:38:56 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 738ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6384)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:41:11 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 1317ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6369)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:41:48 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taoc", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taoc", "price"=>"1"}}
+Completed 200 OK in 687ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 4535)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:42:14 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 1204ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6365)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:43:01 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 1720ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6369)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:43:18 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 633ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6364)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:44:37 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bar", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bar", "price"=>"1"}}
+Completed 200 OK in 804ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6321)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:50:43 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 1070ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6369)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:51:57 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 763ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 6294)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:55:45 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10120", "type"=>"fast casual ", "price"=>"1", "adapter"=>{"location"=>"10120", "type"=>"fast casual ", "price"=>"1"}}
+Completed 200 OK in 740ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6565)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:56:04 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10120", "type"=>"tacos", "price"=>"1", "adapter"=>{"location"=>"10120", "type"=>"tacos", "price"=>"1"}}
+Completed 200 OK in 711ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6633)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 14:56:15 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10009", "type"=>"tacos", "price"=>"1", "adapter"=>{"location"=>"10009", "type"=>"tacos", "price"=>"1"}}
+Completed 200 OK in 563ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6355)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:00:34 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10001", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"10001", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 1712ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6348)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:02:50 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"taco", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"taco", "price"=>"1"}}
+Completed 200 OK in 842ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6370)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:03:30 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"wbefibvi", "type"=>"befiwbvi", "price"=>"1", "adapter"=>{"location"=>"wbefibvi", "type"=>"befiwbvi", "price"=>"1"}}
+Completed 200 OK in 850ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2612)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:03:40 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"wbefibvi", "type"=>"befiwbvi", "price"=>"1", "adapter"=>{"location"=>"wbefibvi", "type"=>"befiwbvi", "price"=>"1"}}
+Completed 200 OK in 683ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2611)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:03:46 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"ny", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"ny", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 678ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6286)
+
+
+Started POST "/yelp" for ::1 at 2020-03-02 15:04:20 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"ny", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"ny", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 736ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6293)
+
+
