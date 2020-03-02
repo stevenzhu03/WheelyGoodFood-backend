@@ -73,5 +73,17 @@ function postToBackEnd(form){
                 body: JSON.stringify(searchSelection)
             })
             .then(response => response.json())
-            .then(restaurant => console.log(restaurant))
+            .then(restaurant => {
+                let card = document.getElementById('card')
+                let li = document.createElement('li')
+
+                li.innerHTML=`
+                <p>${restaurant.business_info.name}</p>
+                <img src=${restaurant.business_info.image_url}>
+                <p>${restaurant.business_info.phone}</p>
+                <p>${restaurant.business_info.rating}</p>
+                `
+
+                card.append(li)
+            })
         }
