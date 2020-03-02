@@ -1585,3 +1585,95 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `yelp'
 app/controllers/adapter_controller.rb:9:in `yelp'
+Started POST "/yelp" for ::1 at 2020-02-28 16:39:00 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"tacos", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"tacos", "price"=>"1"}}
+Completed 200 OK in 2412ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 9844)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:39:36 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"tacos", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"tacos", "price"=>"1"}}
+Completed 200 OK in 259466ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 47273)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:43:55 -0500
+Started POST "/yelp" for ::1 at 2020-02-28 16:43:55 -0500
+Started POST "/yelp" for ::1 at 2020-02-28 16:43:55 -0500
+Started POST "/yelp" for ::1 at 2020-02-28 16:43:55 -0500
+Started POST "/yelp" for ::1 at 2020-02-28 16:43:55 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+Processing by AdapterController#yelp as JSON
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Completed 200 OK in 30703ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 23971)
+
+
+Completed 200 OK in 31806ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 88371)
+
+
+Completed 200 OK in 32386ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 108150)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:27 -0500
+Completed 200 OK in 32366ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 104335)
+
+
+Completed 200 OK in 32369ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 109553)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:27 -0500
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:27 -0500
+Processing by AdapterController#yelp as JSON
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:27 -0500
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:27 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bidew", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bidew", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bidew", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bidew", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bidew", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bidew", "price"=>"1"}}
+Completed 200 OK in 2063ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 12266)
+
+
+Completed 200 OK in 2415ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 18226)
+
+
+Completed 200 OK in 2779ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 20772)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:31 -0500
+Completed 200 OK in 3202ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 35983)
+
+
+Completed 200 OK in 3203ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 40516)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:44:31 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bidew", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bidew", "price"=>"1"}}
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Completed 200 OK in 551ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4926)
+
+
+Completed 200 OK in 804ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 11881)
+
+
+Started POST "/yelp" for ::1 at 2020-02-28 16:45:03 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"chinese", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"chinese", "price"=>"1"}}
+Completed 200 OK in 1060ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 9853)
+
+
