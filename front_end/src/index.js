@@ -60,23 +60,23 @@ function postToBackEnd(form){
     })
     
     
-}
+}//end of postToBackEnd
 
-        function searchBusiness(indicatedSegment){
-            let businessId = indicatedSegment.id
-            let searchSelection = {id: businessId}
-            fetch('http://localhost:3000/yelp/business', {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json',
-                    accept: 'application/json'
-                },
-                body: JSON.stringify(searchSelection)
-            })
-            .then(response => response.json())
-            .then(restaurant => {
-                let wheel = document.getElementById("wheel")
-                wheel.hidden = true
+function searchBusiness(indicatedSegment){
+    let businessId = indicatedSegment.id
+    let searchSelection = {id: businessId}
+    fetch('http://localhost:3000/yelp/business', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            accept: 'application/json'
+        },
+        body: JSON.stringify(searchSelection)
+    })
+    .then(response => response.json())
+    .then(restaurant => {
+        let wheel = document.getElementById("wheel")
+        wheel.hidden = true
 
                 console.log(restaurant)
                 let card = document.getElementById('card')
@@ -112,15 +112,15 @@ function postToBackEnd(form){
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
 
-                //load thumbnails
-                let thumbnails = document.getElementById('thumbnails');
-                restaurant.business_info.photos.forEach(photo=>{
-                    let pic = document.createElement("img")
-                    pic.src = photo
-                    pic.height = "100"
-                    pic.width = "100"
-                    thumbnails.append(pic)
-                })
+        //load thumbnails
+        let thumbnails = document.getElementById('thumbnails');
+        restaurant.business_info.photos.forEach(photo=>{
+            let pic = document.createElement("img")
+            pic.src = photo
+            pic.height = "100"
+            pic.width = "100"
+            thumbnails.append(pic)
+        })
 
                 let reviews = document.getElementById('reviews');
                 restaurant.reviews.forEach(review=>{
@@ -129,8 +129,8 @@ function postToBackEnd(form){
                     reviews.append(pic)
                 })
 
-            })
-        }//end of search business
+    })
+}//end of search business
 
 //helper functions
 
