@@ -34,12 +34,13 @@ function postToBackEnd(form){
     })
     .then((response) => response.json())
     .then(search => {
-        console.log(search)
+        // console.log(search)
         for (i=0; i < search.length; i++){
             resultsArray[i]["text"] = search[i].name
             resultsArray[i]["id"] = search[i].id
         }
-
+        let wheel = document.getElementById("wheel")
+        wheel.hidden = false
         theWheel = new Winwheel({
             'numSegments'  : 8,     // Specify number of segments.
             'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
@@ -74,16 +75,47 @@ function postToBackEnd(form){
             })
             .then(response => response.json())
             .then(restaurant => {
-                let card = document.getElementById('card')
-                let li = document.createElement('li')
+                let wheel = document.getElementById("wheel")
+                wheel.hidden = true
 
-                li.innerHTML=`
-                <p>${restaurant.business_info.name}</p>
-                <img src=${restaurant.business_info.image_url}>
-                <p>${restaurant.business_info.phone}</p>
-                <p>${restaurant.business_info.rating}</p>
+                let card = document.getElementById('card')
+                card.hidden= false
+                card.innerHTML=`
+                <img src=${restaurant.business_info.image_url} width="300" height="300">
+                <h2><a href=${restaurant.business_info.url}>${restaurant.business_info.name}<a></h2>
+                <h3> Rating: ${restaurant.business_info.rating} </h3>
+                <h3> Phone Number: ${restaurant.business_info.phone} </h3>
+                <h3> Address: ${restaurant.business_info.location.display_address} </h3>
+                <div id="thumbnails"></div>
+                <ul id="reviews"></ul>
+                <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
 
-                card.append(li)
+                //load thumbnails
+                let thumbnails = document.getElementById('thumbnails');
+                restaurant.business_info.photos.forEach(photo=>{
+                    let pic = document.createElement("img")
+                    pic.src = photo
+                    pic.height = "100"
+                    pic.width = "100"
+                    thumbnails.append(pic)
+                })
+
+                let reviews = document.getElementById('reviews');
+                restaurant.reviews.forEach(review=>{
+                    let pic = document.createElement("li")
+                    pic.innerHTML = review.text
+                    reviews.append(pic)
+                })
+
             })
-        }
+        }//end of search business
+
+//helper functions
+
+function toggleWheelAndCard(){
+    let card = document.getElementById("card")
+    let wheel = document.getElementById("wheel")
+    card.hidden = !card.hidden
+    wheel.hidden = !wheel.hidden
+}

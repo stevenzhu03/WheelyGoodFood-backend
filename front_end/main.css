@@ -13,6 +13,7 @@ Verison History:
 body
 {
     font-family: arial;
+    word-wrap: break-word;
 }
 
 /* Sets the background image for the wheel */
