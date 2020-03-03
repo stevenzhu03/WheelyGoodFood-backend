@@ -1,0 +1,59 @@
+/* Reset */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Utility Classes */
+
+
+
+
+/* Banner */
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+}
+
+#banner {
+    background-color: #D62828;
+    overflow: auto;
+}
+
+#banner h1 {
+    color: aliceblue;
+    font-size: 72px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#banner p {
+    color: #333333;
+    font-size: 22px;
+    float: left;
+    margin-top: -10px;
+    padding-left: 130px;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+/* Content */
+
+/* #content {
+    
+} */
+
+/* Left Side */
+
+.left-side {
+    background-color: aqua;
+    float: left;
+    height: 100%;
+    width: 20%;
+}
+

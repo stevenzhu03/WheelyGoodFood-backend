@@ -60,56 +60,56 @@ function postToBackEnd(form){
     })
     
     
-}
+}//end of postToBackEnd
 
-        function searchBusiness(indicatedSegment){
-            let businessId = indicatedSegment.id
-            let searchSelection = {id: businessId}
-            fetch('http://localhost:3000/yelp/business', {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json',
-                    accept: 'application/json'
-                },
-                body: JSON.stringify(searchSelection)
-            })
-            .then(response => response.json())
-            .then(restaurant => {
-                let wheel = document.getElementById("wheel")
-                wheel.hidden = true
+function searchBusiness(indicatedSegment){
+    let businessId = indicatedSegment.id
+    let searchSelection = {id: businessId}
+    fetch('http://localhost:3000/yelp/business', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            accept: 'application/json'
+        },
+        body: JSON.stringify(searchSelection)
+    })
+    .then(response => response.json())
+    .then(restaurant => {
+        let wheel = document.getElementById("wheel")
+        wheel.hidden = true
 
-                let card = document.getElementById('card')
-                card.hidden= false
-                card.innerHTML=`
-                <img src=${restaurant.business_info.image_url} width="300" height="300">
-                <h2><a href=${restaurant.business_info.url}>${restaurant.business_info.name}<a></h2>
-                <h3> Rating: ${restaurant.business_info.rating} </h3>
-                <h3> Phone Number: ${restaurant.business_info.phone} </h3>
-                <h3> Address: ${restaurant.business_info.location.display_address} </h3>
-                <div id="thumbnails"></div>
-                <ul id="reviews"></ul>
-                <button onclick="toggleWheelAndCard()">Respin Wheel</button>
-                `
+        let card = document.getElementById('card')
+        card.hidden= false
+        card.innerHTML=`
+        <img src=${restaurant.business_info.image_url} width="300" height="300">
+        <h2><a href=${restaurant.business_info.url}>${restaurant.business_info.name}<a></h2>
+        <h3> Rating: ${restaurant.business_info.rating} </h3>
+        <h3> Phone Number: ${restaurant.business_info.phone} </h3>
+        <h3> Address: ${restaurant.business_info.location.display_address} </h3>
+        <div id="thumbnails"></div>
+        <ul id="reviews"></ul>
+        <button onclick="toggleWheelAndCard()">Respin Wheel</button>
+        `
 
-                //load thumbnails
-                let thumbnails = document.getElementById('thumbnails');
-                restaurant.business_info.photos.forEach(photo=>{
-                    let pic = document.createElement("img")
-                    pic.src = photo
-                    pic.height = "100"
-                    pic.width = "100"
-                    thumbnails.append(pic)
-                })
+        //load thumbnails
+        let thumbnails = document.getElementById('thumbnails');
+        restaurant.business_info.photos.forEach(photo=>{
+            let pic = document.createElement("img")
+            pic.src = photo
+            pic.height = "100"
+            pic.width = "100"
+            thumbnails.append(pic)
+        })
 
-                let reviews = document.getElementById('reviews');
-                restaurant.reviews.forEach(review=>{
-                    let pic = document.createElement("li")
-                    pic.innerHTML = review.text
-                    reviews.append(pic)
-                })
+        let reviews = document.getElementById('reviews');
+        restaurant.reviews.forEach(review=>{
+            let pic = document.createElement("li")
+            pic.innerHTML = review.text
+            reviews.append(pic)
+        })
 
-            })
-        }//end of search business
+    })
+}//end of search business
 
 //helper functions
 
