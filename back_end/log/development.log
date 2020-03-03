@@ -4647,3 +4647,104 @@ Processing by AdapterController#yelpBusiness as JSON
 Completed 200 OK in 774ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 7015)
 
 
+Started POST "/yelp/business" for ::1 at 2020-03-03 13:35:08 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"QkVWIUS6jIIPKY1faBSLyA", "adapter"=>{"id"=>"QkVWIUS6jIIPKY1faBSLyA"}}
+Completed 200 OK in 1996ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 6734)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 13:35:24 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 721ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6399)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 13:35:34 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"EFIUR61xEwmYP7YGbNRAkg", "adapter"=>{"id"=>"EFIUR61xEwmYP7YGbNRAkg"}}
+Completed 200 OK in 776ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 7170)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 14:35:18 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"", "type"=>"", "price"=>"1", "adapter"=>{"location"=>"", "type"=>"", "price"=>"1"}}
+Completed 200 OK in 312ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 14:35:25 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"bar", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"bar", "price"=>"1"}}
+Completed 200 OK in 782ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 6321)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 14:35:35 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"bkIMbvXOcztDVz8bpyhMzQ", "adapter"=>{"id"=>"bkIMbvXOcztDVz8bpyhMzQ"}}
+Completed 200 OK in 755ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 6850)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:41:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jerryhuang/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jerryhuang/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.2ms | Allocations: 315)
+Completed 200 OK in 41ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 1590)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-03-03 14:41:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.2) lib/puma/configuration.rb:228:in `call'
+puma (4.3.2) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.2) lib/puma/server.rb:472:in `process_client'
+puma (4.3.2) lib/puma/server.rb:328:in `block in run'
+puma (4.3.2) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/yelp" for ::1 at 2020-03-03 15:17:57 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 719ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6694)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:23:04 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jerryhuang/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jerryhuang/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.8ms | Allocations: 190)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 730)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 15:38:18 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatrion ny", "type"=>"burger", "price"=>"1", "adapter"=>{"location"=>"flatrion ny", "type"=>"burger", "price"=>"1"}}
+Completed 200 OK in 2010ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6711)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 15:39:04 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatrion ny", "type"=>"burger", "price"=>"1", "adapter"=>{"location"=>"flatrion ny", "type"=>"burger", "price"=>"1"}}
+Completed 200 OK in 1118ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 6702)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 15:39:26 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 916ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6680)
+
+
