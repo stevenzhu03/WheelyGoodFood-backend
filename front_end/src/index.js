@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", e =>{
                 e.preventDefault()
                 let form = e.target.parentNode
                 postToBackEnd(form)
-                card.hidden = true //hide card when you press button again
                 break;
         }
 
@@ -35,10 +34,7 @@ function postToBackEnd(form){
     })
     .then((response) => response.json())
     .then(search => {
-        if(search == null){
-            card.hidden = false
-            card.innerHTML = "NO RESULTS, PLEASE TRY AGAIN"
-        }
+        // console.log(search)
         for (i=0; i < search.length; i++){
             resultsArray[i]["text"] = search[i].name
             resultsArray[i]["id"] = search[i].id
@@ -82,36 +78,15 @@ function postToBackEnd(form){
                 let wheel = document.getElementById("wheel")
                 wheel.hidden = true
 
-                console.log(restaurant)
                 let card = document.getElementById('card')
                 card.hidden= false
-                
-                let hours ={1: "Closed", 2: "Closed", 3: "Closed", 4: "Closed", 5: "Closed", 6: "Closed", 7: "Closed"}
-                restaurant.business_info.hours[0].open.forEach(day=>{
-                    hours[day.day] = `${day.start}-${day.end}`
-                })
-
-
-
                 card.innerHTML=`
-                <h2><a href=${restaurant.business_info.url} target="_blank">${restaurant.business_info.name}<a></h2>
                 <img src=${restaurant.business_info.image_url} width="300" height="300">
-                Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
-                <h3> Rating: ${restaurant.business_info.rating} Stars</h3>
+                <h2><a href=${restaurant.business_info.url}>${restaurant.business_info.name}<a></h2>
+                <h3> Rating: ${restaurant.business_info.rating} </h3>
                 <h3> Phone Number: ${restaurant.business_info.phone} </h3>
                 <h3> Address: ${restaurant.business_info.location.display_address} </h3>
                 <div id="thumbnails"></div>
-                <br>
-                <table style="text-align: right"> 
-                <tr><th>Sunday</th><td>${hours[6]}</td></tr>
-                <tr><th>Monday</th><td>${hours[7]}</td></tr>
-                <tr><th>Tuesday</th><td>${hours[1]}</td></tr>
-                <tr><th>Wednesday</th><td>${hours[2]}</td></tr>
-                <tr><th>Thursday</th><td>${hours[3]}</td></tr>
-                <tr><th>Friday</th><td>${hours[4]}</td></tr>
-                <tr><th>Saturday</th><td>${hours[5]}</td></tr>
-                </table>
-                Reviews: 
                 <ul id="reviews"></ul>
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
@@ -129,7 +104,7 @@ function postToBackEnd(form){
                 let reviews = document.getElementById('reviews');
                 restaurant.reviews.forEach(review=>{
                     let pic = document.createElement("li")
-                    pic.innerHTML = `"${review.text}"`
+                    pic.innerHTML = review.text
                     reviews.append(pic)
                 })
 
