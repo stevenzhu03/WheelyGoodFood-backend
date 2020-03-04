@@ -3,8 +3,7 @@ window.addEventListener("DOMContentLoaded", e =>{
 
     fetch("http://localhost:3000/spins/popular").then(resp => resp.json()).then(
         content=>{
-            let recent = document.getElementById("recent")
-            // debugger
+            let recent = document.getElementById("recent-restaurant")
             content.forEach(restaurant =>{
 
             li = document.createElement("li")
@@ -16,8 +15,7 @@ window.addEventListener("DOMContentLoaded", e =>{
 
     fetch("http://localhost:3000/spins/popular").then(resp => resp.json()).then(
         content=>{
-            let popular = document.getElementById("popular")
-            // debugger
+            let popular = document.getElementById("popular-restaurant")
             content.forEach(restaurant =>{
 
             li = document.createElement("li")
