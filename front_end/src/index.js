@@ -90,7 +90,7 @@ function searchBusiness(indicatedSegment){
 
 
                 card.innerHTML=`
-                <h2><a href=${restaurant.business_info.url} target="_blank">${restaurant.business_info.name}<a></h2>
+                <h2><a href=${restaurant.business_info.url} target="_blank">${restaurant.business_info.name}</a></h2>
                 <img src=${restaurant.business_info.image_url} width="300" height="300">
                 Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
                 <h3> Rating: ${restaurant.business_info.rating} Stars</h3>
@@ -108,29 +108,34 @@ function searchBusiness(indicatedSegment){
                 <tr><th>Saturday</th><td>${hours[5]}</td></tr>
                 </table>
                 Reviews: 
-                <ul id="reviews"></ul>
+                <div id="reviews"></div>
 
                 MAP:
                 <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
 
-        //load thumbnails
-        let thumbnails = document.getElementById('thumbnails');
-        restaurant.business_info.photos.forEach(photo=>{
-            let pic = document.createElement("img")
-            pic.src = photo
-            pic.height = "100"
-            pic.width = "100"
-            thumbnails.append(pic)
-        })
+            //load thumbnails
+            let thumbnails = document.getElementById('thumbnails');
+            restaurant.business_info.photos.forEach(photo=>{
+                let pic = document.createElement("img")
+                pic.src = photo
+                pic.height = "100"
+                pic.width = "100"
+                thumbnails.append(pic)
+            })
 
-                let reviews = document.getElementById('reviews');
-                restaurant.reviews.forEach(review=>{
-                    let pic = document.createElement("li")
-                    pic.innerHTML = `"${review.text}"`
-                    reviews.append(pic)
-                })
+            //load reviews 
+            let reviews = document.getElementById('reviews');
+            restaurant.reviews.forEach(review=>{
+                let review_box = document.getElementById("reviews")
+                let box = document.createElement("div")
+                box.innerHTML = `
+                <span class="yelp-review" data-review-id="${review.id}" data-hostname="www.yelp.com"></span>
+                Read <a href="https://www.yelp.com/user_details?userid=${review.user.id}" rel="nofollow noopener>"${review.user.name}</a>'s <a href="${review.url}" rel="nofollow noopener">review</a> of <a href="${review.url}" rel="nofollow noopener">${restaurant.business_info.name}</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a>
+                `
+                review_box.append(box)
+            })
 
     })
 }//end of search business
