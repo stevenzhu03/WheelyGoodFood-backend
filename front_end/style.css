@@ -42,20 +42,33 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Content */
 
-/* #content {
-    
-} */
-
-/* Left Side */
-
-.left-side {
-    background-color: aqua;
-    float: left;
-    height: 100%;
-    width: 20%;
+/* Flexbox Container */
+#container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
 
+.left-side {
+    display: flex;
+    background-color: #FCBF49;
+    flex: 1;
+    max-width: 15vw;
+}
 
+.map {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    flex: 1;
+    max-width: 35vw;
+}
+
+.content {
+    display: flex;
+    background-color: #EAE2B7;
+    flex: 1;
+    max-width: 50vw;
+}
