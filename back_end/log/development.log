@@ -5868,3 +5868,205 @@ Processing by SpinsController#recent as */*
 Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2825)
 
 
+Started POST "/yelp" for ::1 at 2020-03-04 13:44:06 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"fidi ny", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"fidi ny", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 964ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6809)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:44:18 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"l29pVn4RfU9xYMggiIVOcg", "adapter"=>{"id"=>"l29pVn4RfU9xYMggiIVOcg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "l29pVn4RfU9xYMggiIVOcg"], ["name", "R & R Coffee"], ["created_at", "2020-03-04 18:44:19.166551"], ["updated_at", "2020-03-04 18:44:19.166551"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 978ms (Views: 0.9ms | ActiveRecord: 1.7ms | Allocations: 8835)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:44:36 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"x_oV9aGzq-lNmgPXU_tvbw", "adapter"=>{"id"=>"x_oV9aGzq-lNmgPXU_tvbw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "x_oV9aGzq-lNmgPXU_tvbw"], ["name", "Zucker's Bagels & Smoked Fish"], ["created_at", "2020-03-04 18:44:36.873893"], ["updated_at", "2020-03-04 18:44:36.873893"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 709ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 8887)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:44:51 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10001", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"10001", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 1588ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 6712)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:45:01 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"Ys9iYSjuFDpZj7B1X07v5g", "adapter"=>{"id"=>"Ys9iYSjuFDpZj7B1X07v5g"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "Ys9iYSjuFDpZj7B1X07v5g"], ["name", "Liberty Bagels Midtown"], ["created_at", "2020-03-04 18:45:03.253874"], ["updated_at", "2020-03-04 18:45:03.253874"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 2149ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 8887)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:45:12 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10009", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"10009", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 839ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 6779)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:45:22 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"tRys0z0O4EE8sivXLFZ3kQ", "adapter"=>{"id"=>"tRys0z0O4EE8sivXLFZ3kQ"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "tRys0z0O4EE8sivXLFZ3kQ"], ["name", "David's Bagels"], ["created_at", "2020-03-04 18:45:23.156936"], ["updated_at", "2020-03-04 18:45:23.156936"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 738ms (Views: 0.8ms | ActiveRecord: 1.5ms | Allocations: 8868)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:45:36 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 4061)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:45:54 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10004", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"10004", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 823ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6744)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:46:06 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"Sq-1bmvA_jypgubzakledA", "adapter"=>{"id"=>"Sq-1bmvA_jypgubzakledA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "Sq-1bmvA_jypgubzakledA"], ["name", "Konditori"], ["created_at", "2020-03-04 18:46:07.548154"], ["updated_at", "2020-03-04 18:46:07.548154"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 683ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8926)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:46:26 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10004", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"10004", "type"=>"bagel", "price"=>"1"}}
+Started POST "/yelp" for ::1 at 2020-03-04 13:46:27 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"10004", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"10004", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 1748ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 16151)
+
+
+Completed 200 OK in 820ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 8514)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:46:36 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"0EOWrLcnWEO1pP7bZafofw", "adapter"=>{"id"=>"0EOWrLcnWEO1pP7bZafofw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "0EOWrLcnWEO1pP7bZafofw"], ["name", "Wonder Bagels"], ["created_at", "2020-03-04 18:46:37.388092"], ["updated_at", "2020-03-04 18:46:37.388092"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 767ms (Views: 10.4ms | ActiveRecord: 1.4ms | Allocations: 8781)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:57:19 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.8ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 4890)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:57:22 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 932ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6686)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:57:29 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"t9WWw6ZDk7lLksrbrc8kgg", "adapter"=>{"id"=>"t9WWw6ZDk7lLksrbrc8kgg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.9ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "t9WWw6ZDk7lLksrbrc8kgg"], ["name", "Flaming Grill Supreme Buffet"], ["created_at", "2020-03-04 18:57:30.898499"], ["updated_at", "2020-03-04 18:57:30.898499"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1580ms (Views: 0.9ms | ActiveRecord: 1.7ms | Allocations: 8873)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 15:14:56 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (3.9ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 3.9ms | Allocations: 5195)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 15:17:54 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"bay ridge", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"bay ridge", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 729ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 6357)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:18:03 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"wzC9wmLjHBpl83x0bG7cMQ", "adapter"=>{"id"=>"wzC9wmLjHBpl83x0bG7cMQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (3.7ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "wzC9wmLjHBpl83x0bG7cMQ"], ["name", "Pizza Wagon"], ["created_at", "2020-03-04 20:18:04.188928"], ["updated_at", "2020-03-04 20:18:04.188928"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 926ms (Views: 1.0ms | ActiveRecord: 4.2ms | Allocations: 8795)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:18:57 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"z3UFomMUEXYKbIeCN7MS7Q", "adapter"=>{"id"=>"z3UFomMUEXYKbIeCN7MS7Q"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.3ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "z3UFomMUEXYKbIeCN7MS7Q"], ["name", "Nonno's Pizza"], ["created_at", "2020-03-04 20:18:58.562036"], ["updated_at", "2020-03-04 20:18:58.562036"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 855ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 8785)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 15:20:02 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"jersey city", "type"=>"donut", "price"=>"1", "adapter"=>{"location"=>"jersey city", "type"=>"donut", "price"=>"1"}}
+Completed 200 OK in 911ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 6545)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:20:22 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"83ZAM-MIQfYboZAklGT6iA", "adapter"=>{"id"=>"83ZAM-MIQfYboZAklGT6iA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "83ZAM-MIQfYboZAklGT6iA"], ["name", "Krispy Kreme"], ["created_at", "2020-03-04 20:20:23.118471"], ["updated_at", "2020-03-04 20:20:23.118471"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 782ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 8828)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 15:20:42 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 6068)
+
+
