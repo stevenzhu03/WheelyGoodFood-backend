@@ -6,6 +6,10 @@ Reset
     box-sizing: border-box;
 }
 
+body {
+    margin: 0px;
+}
+
 /* Utility Classes */
 
 
@@ -53,9 +57,20 @@ h1, h2, h3 {
 
 #left-side {
     display: flex;
+    flex-direction: column;
     background-color: #FCBF49;
     flex: 1;
     max-width: 15vw;
+}
+
+#left-side #recent{
+    /* display: flex; */
+    max-height: 50vh;
+}
+
+#left-side #popular{
+    /* display: flex; */
+    max-height: 50vh;
 }
 
 #map {
@@ -72,3 +87,5 @@ h1, h2, h3 {
     flex: 1;
     max-width: 50vw;
 }
+
+

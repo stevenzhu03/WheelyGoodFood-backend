@@ -12,15 +12,28 @@ class Spin < ActiveRecord::Base
     end
 
     def self.spin_count
-        hash = {}
-        Spin.all.each{|spin|
-            if hash.key?(spin.yelp_id)
-                hash[spin.yelp_id] += 1
-            else
-                hash[spin.yelp_id] = 1
-            end
+        restaurants = []
+        
+        uniqueRestuarants = Spin.all.uniq{|restaurant| restaurant['yelp_id']}
+        
+        uniqueRestuarants.each{ |spin|
+            hash = {}
+            hash[:name] = spin.name
+            hash[:id] = spin['yelp_id']
+            hash[:url] = spin.url
+
+
+            count = Spin.all.count{ |spin|
+                        spin['yelp_id'] === hash[:id]
+                    }
+                    
+            hash[:count] = count
+            
+            restaurants << hash
         }
-        return hash
+
+        return restaurants
+
     end
 
 end

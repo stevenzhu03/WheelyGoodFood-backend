@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", e =>{
     let form = document.getElementById("form")
 
-    fetch("http://localhost:3000/spins/recent").then(resp => resp.json()).then(
+    fetch("http://localhost:3000/spins/popular").then(resp => resp.json()).then(
         content=>{
             let recent = document.getElementById("recent")
             // debugger
@@ -10,6 +10,19 @@ window.addEventListener("DOMContentLoaded", e =>{
             li = document.createElement("li")
             li.innerHTML = `${restaurant.name}`
             recent.append(li)
+        
+        })
+    })
+
+    fetch("http://localhost:3000/spins/popular").then(resp => resp.json()).then(
+        content=>{
+            let popular = document.getElementById("popular")
+            // debugger
+            content.forEach(restaurant =>{
+
+            li = document.createElement("li")
+            li.innerHTML = `${restaurant.name}`
+            popular.append(li)
         
         })
     })
