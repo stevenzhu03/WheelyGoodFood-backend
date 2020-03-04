@@ -86,7 +86,7 @@ function searchBusiness(indicatedSegment){
                 restaurant.business_info.hours[0].open.forEach(day=>{
                     hours[day.day] = `${day.start}-${day.end}`
                 })
-
+    
 
 
                 card.innerHTML=`
@@ -109,6 +109,9 @@ function searchBusiness(indicatedSegment){
                 </table>
                 Reviews: 
                 <ul id="reviews"></ul>
+
+                MAP:
+                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
 
@@ -140,3 +143,5 @@ function toggleWheelAndCard(){
     card.hidden = !card.hidden
     wheel.hidden = !wheel.hidden
 }
+
+

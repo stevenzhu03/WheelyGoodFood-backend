@@ -4800,3 +4800,123 @@ Processing by AdapterController#yelpBusiness as JSON
 Completed 200 OK in 967ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 6787)
 
 
+Started POST "/yelp" for ::1 at 2020-03-03 22:19:16 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 651ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 6668)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:19:24 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"aw48wMOoqi4mVyH-0XyzAA", "adapter"=>{"id"=>"aw48wMOoqi4mVyH-0XyzAA"}}
+Completed 200 OK in 589ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6895)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:21:27 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 564ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6666)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:21:34 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"t9WWw6ZDk7lLksrbrc8kgg", "adapter"=>{"id"=>"t9WWw6ZDk7lLksrbrc8kgg"}}
+Completed 200 OK in 656ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6826)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:32:36 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1565ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 6671)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:32:44 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"_K9jdnUPFOkH9JV871Qcxw", "adapter"=>{"id"=>"_K9jdnUPFOkH9JV871Qcxw"}}
+Completed 200 OK in 520ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 6815)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:33:10 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 730ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 6676)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:33:21 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"new york", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"new york", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 625ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6607)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:33:35 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"VaL9GaBR_GR-q9d1VzJF3g", "adapter"=>{"id"=>"VaL9GaBR_GR-q9d1VzJF3g"}}
+Completed 200 OK in 595ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 6821)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:35:35 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1552ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6672)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:35:43 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"py2oAPcksHoXnCdtWPom9Q", "adapter"=>{"id"=>"py2oAPcksHoXnCdtWPom9Q"}}
+Completed 200 OK in 685ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 7175)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:36:19 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 605ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6676)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:36:26 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"VdovT-A4je75Z7GMxsYbCA", "adapter"=>{"id"=>"VdovT-A4je75Z7GMxsYbCA"}}
+Completed 200 OK in 696ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 6619)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:37:24 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 574ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6667)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:37:31 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"aw48wMOoqi4mVyH-0XyzAA", "adapter"=>{"id"=>"aw48wMOoqi4mVyH-0XyzAA"}}
+Completed 200 OK in 893ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 6899)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:38:05 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"gravesend", "type"=>"pizzq", "price"=>"1", "adapter"=>{"location"=>"gravesend", "type"=>"pizzq", "price"=>"1"}}
+Completed 200 OK in 584ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 5018)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:38:09 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"gravesend", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"gravesend", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 505ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6266)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:38:18 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"kn9pSrlttF5R4Re5wcydBA", "adapter"=>{"id"=>"kn9pSrlttF5R4Re5wcydBA"}}
+Completed 200 OK in 502ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 6694)
+
+
+Started POST "/yelp" for ::1 at 2020-03-03 22:39:49 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1750ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 6674)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-03 22:39:58 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"7HP3Jjx_M0C2Wus00d1Hxw", "adapter"=>{"id"=>"7HP3Jjx_M0C2Wus00d1Hxw"}}
+Completed 200 OK in 508ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 6782)
+
+
