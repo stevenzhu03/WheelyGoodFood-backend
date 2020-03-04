@@ -1,5 +1,18 @@
 window.addEventListener("DOMContentLoaded", e =>{
     let form = document.getElementById("form")
+
+    fetch("http://localhost:3000/spins/recent").then(resp => resp.json()).then(
+        content=>{
+            let recent = document.getElementById("recent")
+            // debugger
+            content.forEach(restaurant =>{
+
+            li = document.createElement("li")
+            li.innerHTML = `${restaurant.name}`
+            recent.append(li)
+        
+        })
+    })
     
     
     document.addEventListener("click", e =>{

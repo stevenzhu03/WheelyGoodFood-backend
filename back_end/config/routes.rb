@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   post '/yelp', to: 'adapter#yelp'
   post '/yelp/business', to: 'adapter#yelpBusiness'
-  post '/maps', to: 'adapters#maps'
-  post 'visits', to: 'restuarant#visits' 
+  get '/spins/most', to: 'spins#most'
+  get '/spins/recent', to: 'spins#recent'
+  # post '/maps', to: 'adapters#maps'
+  # post 'visits', to: 'restuarant#visits' 
 
 end

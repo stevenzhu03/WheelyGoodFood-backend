@@ -12,7 +12,7 @@ class AdapterController < ActionController::API
         id = params[:id]
         results = Adapter.business(id)
         reviews = Adapter.business_reviews(id)
-
+        Spin.create({yelp_id: results["id"], name: results["name"]})
         
         response = {
             business_info: results,

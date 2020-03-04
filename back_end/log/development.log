@@ -5199,3 +5199,672 @@ Processing by AdapterController#yelpBusiness as JSON
 Completed 200 OK in 830ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 6629)
 
 
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7174802560429842870)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRestaurants (20200228181004)
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.2ms)[0m  [1m[35mDROP TABLE "restaurants"[0m
+  [1m[36mprimary::SchemaMigration Destroy (3.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200228181004"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7174802560429842870)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (36.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_development"[0m
+  [1m[35m (34.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_test"[0m
+  [1m[35m (195.6ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_development" ENCODING = 'unicode'[0m
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 15:38:43.339460"], ["updated_at", "2020-03-04 15:38:43.339460"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83e6e9510955ef04f606b0339b1f0d53760104f9"], ["created_at", "2020-03-04 15:38:43.348730"], ["updated_at", "2020-03-04 15:38:43.348730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 15:38:43.409576"], ["updated_at", "2020-03-04 15:38:43.409576"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-04 15:38:43.416302"], ["key", "environment"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83e6e9510955ef04f606b0339b1f0d53760104f9"], ["created_at", "2020-03-04 15:38:43.422999"], ["updated_at", "2020-03-04 15:38:43.422999"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7174802560429842870)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSpins (20200228181004)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200228181004"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7174802560429842870)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (47.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_development"[0m
+  [1m[35m (25.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_test"[0m
+  [1m[35m (84.7ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_development" ENCODING = 'unicode'[0m
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200228181004)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 15:39:23.020168"], ["updated_at", "2020-03-04 15:39:23.020168"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "07d64c767b4f3365ca690eed38394401094541ad"], ["created_at", "2020-03-04 15:39:23.027069"], ["updated_at", "2020-03-04 15:39:23.027069"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200228181004)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 15:39:23.095868"], ["updated_at", "2020-03-04 15:39:23.095868"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-04 15:39:23.103028"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "07d64c767b4f3365ca690eed38394401094541ad"], ["created_at", "2020-03-04 15:39:23.107653"], ["updated_at", "2020-03-04 15:39:23.107653"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/yelp" for ::1 at 2020-03-04 10:53:52 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 763ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6449)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 10:53:59 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"j-a8HUcsBJXHV2IfF786jw", "adapter"=>{"id"=>"j-a8HUcsBJXHV2IfF786jw"}}
+  [1m[36mSpin Load (4.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Create (0.7ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Kogane Ramen"], ["created_at", "2020-03-04 15:54:13.274172"], ["updated_at", "2020-03-04 15:54:13.274172"]]
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.8ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Kogane Ramen"], ["created_at", "2020-03-04 16:07:25.245460"], ["updated_at", "2020-03-04 16:07:25.245460"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 805582ms (Views: 0.8ms | ActiveRecord: 24.0ms | Allocations: 62890)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 11:07:33 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 2071ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6421)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 11:07:45 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 1035ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6385)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 11:07:56 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"QbAfrOxbuYKU248SDXHZEQ", "adapter"=>{"id"=>"QbAfrOxbuYKU248SDXHZEQ"}}
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Load (0.7ms)[0m  [1m[34mSELECT "spins".* FROM "spins" ORDER BY "spins"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:6:in `count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:6:in `count'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Totto Ramen"], ["created_at", "2020-03-04 16:16:00.714563"], ["updated_at", "2020-03-04 16:16:00.714563"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 484375ms (Views: 0.9ms | ActiveRecord: 8.2ms | Allocations: 591848)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 11:16:19 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 868ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6397)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 11:16:29 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"c6R_hvUwsqXX2MUXWtO94Q", "adapter"=>{"id"=>"c6R_hvUwsqXX2MUXWtO94Q"}}
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `count'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Nakamura"], ["created_at", "2020-03-04 16:16:39.726555"], ["updated_at", "2020-03-04 16:16:39.726555"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 10529ms (Views: 0.8ms | ActiveRecord: 8.8ms | Allocations: 18273)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 11:17:07 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"W5RSIwNKBa7k0jeAs5KDYg", "adapter"=>{"id"=>"W5RSIwNKBa7k0jeAs5KDYg"}}
+  [1m[36mSpin Load (0.9ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `count'
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Create (14.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Mei Jin Ramen"], ["created_at", "2020-03-04 16:20:48.818062"], ["updated_at", "2020-03-04 16:20:48.818062"]]
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.8ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", 0], ["name", "Mei Jin Ramen"], ["created_at", "2020-03-04 16:21:23.167263"], ["updated_at", "2020-03-04 16:21:23.167263"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 255902ms (Views: 1.1ms | ActiveRecord: 61.9ms | Allocations: 443104)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7174802560429842870)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSpins (20200228181004)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE "spins"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200228181004"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7174802560429842870)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7174802560429842870)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSpins (20200228181004)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200228181004"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7174802560429842870)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_development"[0m
+  [1m[35m (45.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_test"[0m
+  [1m[35m (184.4ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_development" ENCODING = 'unicode'[0m
+  [1m[35m (73.6ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200228181004)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 16:21:58.660572"], ["updated_at", "2020-03-04 16:21:58.660572"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "e9b7f401a3acca960ccfd92b37ddb21bfe4be4e2"], ["created_at", "2020-03-04 16:21:58.667712"], ["updated_at", "2020-03-04 16:21:58.667712"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200228181004)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 16:21:58.734275"], ["updated_at", "2020-03-04 16:21:58.734275"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-04 16:21:58.739578"], ["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "e9b7f401a3acca960ccfd92b37ddb21bfe4be4e2"], ["created_at", "2020-03-04 16:21:58.743575"], ["updated_at", "2020-03-04 16:21:58.743575"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/yelp" for ::1 at 2020-03-04 11:22:19 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 919ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6550)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 11:22:27 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"QbAfrOxbuYKU248SDXHZEQ", "adapter"=>{"id"=>"QbAfrOxbuYKU248SDXHZEQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Create (0.9ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "QbAfrOxbuYKU248SDXHZEQ"], ["name", "Totto Ramen"], ["created_at", "2020-03-04 16:22:44.527651"], ["updated_at", "2020-03-04 16:22:44.527651"]]
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:6:in `count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "QbAfrOxbuYKU248SDXHZEQ"], ["name", "Totto Ramen"], ["created_at", "2020-03-04 16:26:39.685723"], ["updated_at", "2020-03-04 16:26:39.685723"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 251880ms (Views: 0.9ms | ActiveRecord: 13.3ms | Allocations: 219691)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 11:27:09 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 978ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 6551)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 11:27:26 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"W5RSIwNKBa7k0jeAs5KDYg", "adapter"=>{"id"=>"W5RSIwNKBa7k0jeAs5KDYg"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Create (0.7ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "W5RSIwNKBa7k0jeAs5KDYg"], ["name", "Mei Jin Ramen"], ["created_at", "2020-03-04 16:27:42.049825"], ["updated_at", "2020-03-04 16:27:42.049825"]]
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `yelpBusiness'
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Load (17.7ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spinny'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "W5RSIwNKBa7k0jeAs5KDYg"], ["name", "Mei Jin Ramen"], ["created_at", "2020-03-04 16:28:20.702144"], ["updated_at", "2020-03-04 16:28:20.702144"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 54189ms (Views: 1.0ms | ActiveRecord: 29.6ms | Allocations: 62188)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 11:29:10 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"ramen", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"ramen", "price"=>"1"}}
+Completed 200 OK in 2095ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6404)
+
+
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.7ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Destroy (1.7ms)[0m  [1m[31mDELETE FROM "spins" WHERE "spins"."id" = $1[0m  [["id", 4]]
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.8ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Started POST "/yelp" for ::1 at 2020-03-04 13:10:28 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"1", "adapter"=>{"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"1"}}
+Completed 200 OK in 962ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 6699)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:10:43 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"JDZ6_yycNQFTpUZzLIKHUg", "adapter"=>{"id"=>"JDZ6_yycNQFTpUZzLIKHUg"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "JDZ6_yycNQFTpUZzLIKHUg"], ["name", "El Dorado Cantina - Las Vegas Strip"], ["created_at", "2020-03-04 18:10:51.491687"], ["updated_at", "2020-03-04 18:10:51.491687"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 8021ms (Views: 0.9ms | ActiveRecord: 11.1ms | Allocations: 19901)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:11:23 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"3", "adapter"=>{"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"3"}}
+Completed 200 OK in 1916ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 6660)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:11:39 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"BEplfZTUzYwApjMUaOA12w", "adapter"=>{"id"=>"BEplfZTUzYwApjMUaOA12w"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Started POST "/yelp" for ::1 at 2020-03-04 13:12:12 -0500
+Started POST "/yelp" for ::1 at 2020-03-04 13:12:12 -0500
+  [1m[36mSpin Create (1.3ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "BEplfZTUzYwApjMUaOA12w"], ["name", "Canonita"], ["created_at", "2020-03-04 18:12:12.674769"], ["updated_at", "2020-03-04 18:12:12.674769"]]
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:16:in `yelpBusiness'
+Completed 200 OK in 33225ms (Views: 0.8ms | ActiveRecord: 2.6ms | Allocations: 20070)
+
+
+Processing by AdapterController#yelp as JSON
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"hells kitchen ny", "type"=>"mexican ", "price"=>"3", "adapter"=>{"location"=>"hells kitchen ny", "type"=>"mexican ", "price"=>"3"}}
+  Parameters: {"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"3", "adapter"=>{"location"=>"hells kitchen", "type"=>"mexican ", "price"=>"3"}}
+Completed 200 OK in 2067ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 8069)
+
+
+Completed 200 OK in 2513ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 13619)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:12:23 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"sTu5z5HUcIYykg97HHj8xA", "adapter"=>{"id"=>"sTu5z5HUcIYykg97HHj8xA"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.9ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "sTu5z5HUcIYykg97HHj8xA"], ["name", "El Centro"], ["created_at", "2020-03-04 18:12:25.301005"], ["updated_at", "2020-03-04 18:12:25.301005"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1533ms (Views: 0.8ms | ActiveRecord: 14.0ms | Allocations: 12128)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:12:45 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"hells kitchen ny", "type"=>"bagel", "price"=>"3", "adapter"=>{"location"=>"hells kitchen ny", "type"=>"bagel", "price"=>"3"}}
+Completed 200 OK in 869ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 6755)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:13:06 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"j1S3NUrkB3BVT49n_e76NQ", "adapter"=>{"id"=>"j1S3NUrkB3BVT49n_e76NQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "j1S3NUrkB3BVT49n_e76NQ"], ["name", "Best Bagel & Coffee"], ["created_at", "2020-03-04 18:13:07.259027"], ["updated_at", "2020-03-04 18:13:07.259027"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 914ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8830)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:15:59 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"astoria", "type"=>"bagel", "price"=>"1", "adapter"=>{"location"=>"astoria", "type"=>"bagel", "price"=>"1"}}
+Completed 200 OK in 693ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 6738)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:16:11 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"QOmvgnyNHrD6J8vuwaTOkg", "adapter"=>{"id"=>"QOmvgnyNHrD6J8vuwaTOkg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "QOmvgnyNHrD6J8vuwaTOkg"], ["name", "Brooklyn Bagel & Coffee Company"], ["created_at", "2020-03-04 18:16:12.689391"], ["updated_at", "2020-03-04 18:16:12.689391"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 876ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8907)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:16:28 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"ra7WT0N2US_xxOLHnAoelQ", "adapter"=>{"id"=>"ra7WT0N2US_xxOLHnAoelQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "ra7WT0N2US_xxOLHnAoelQ"], ["name", "Astoria Bagel Shop & Deli"], ["created_at", "2020-03-04 18:16:28.946009"], ["updated_at", "2020-03-04 18:16:28.946009"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 763ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8857)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:24:55 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (1.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.0ms | Allocations: 70628)
+
+
+  
+NameError (undefined local variable or method `results' for #<SpinsController:0x00007ff5c3ca1820>
+Did you mean?  result):
+  
+app/controllers/spins_controller.rb:7:in `most'
+Started GET "/spins/most" for ::1 at 2020-03-04 13:26:02 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 8.5ms | Allocations: 73768)
+
+
+  
+NameError (undefined local variable or method `results' for #<SpinsController:0x00007ff5c3c1f0f0>
+Did you mean?  result):
+  
+app/controllers/spins_controller.rb:5:in `most'
+Started GET "/spins/most" for ::1 at 2020-03-04 13:26:36 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 4078)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:26:43 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 819)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:26:56 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 816)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:27:09 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 824)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 13:29:16 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"east village ny", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"east village ny", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 2000ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6579)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:29:44 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"jt-0y4RJ20ONbkxxNWG_Sw", "adapter"=>{"id"=>"jt-0y4RJ20ONbkxxNWG_Sw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.8ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "jt-0y4RJ20ONbkxxNWG_Sw"], ["name", "New Mizu Sushi"], ["created_at", "2020-03-04 18:29:46.047741"], ["updated_at", "2020-03-04 18:29:46.047741"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 2016ms (Views: 0.9ms | ActiveRecord: 1.7ms | Allocations: 8841)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 13:31:18 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"HFn1sPqKSzvxaMk2n2ZtJw", "adapter"=>{"id"=>"HFn1sPqKSzvxaMk2n2ZtJw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["yelp_id", "HFn1sPqKSzvxaMk2n2ZtJw"], ["name", "Kotobuki Manhattan"], ["created_at", "2020-03-04 18:31:19.592939"], ["updated_at", "2020-03-04 18:31:19.592939"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 724ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 9148)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:33:07 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 860)
+
+
+Started GET "/spins/most" for ::1 at 2020-03-04 13:33:16 -0500
+Processing by SpinsController#most as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:16:in `spin_count'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 858)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:33:53 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.2ms | Allocations: 71376)
+
+
+  
+NameError (undefined local variable or method `results' for #<SpinsController:0x00007ff5c08fafa8>
+Did you mean?  result):
+  
+app/controllers/spins_controller.rb:11:in `recent'
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:34:01 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.3ms | Allocations: 71370)
+
+
+  
+NameError (undefined local variable or method `results' for #<SpinsController:0x00007ff5c3bc3a48>
+Did you mean?  result):
+  
+app/controllers/spins_controller.rb:11:in `recent'
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:34:18 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 4.7ms | Allocations: 6069)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:34:33 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:34:40 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:36:43 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:36:53 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:37:22 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:37:35 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:37:58 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 2825)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 13:38:16 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:10:in `sort'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2825)
+
+

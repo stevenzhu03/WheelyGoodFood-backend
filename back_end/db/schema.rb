@@ -15,9 +15,11 @@ ActiveRecord::Schema.define(version: 2020_02_28_181004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "restaurants", force: :cascade do |t|
-    t.integer "yelp_id"
-    t.integer "trip_count"
+  create_table "spins", force: :cascade do |t|
+    t.string "yelp_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
