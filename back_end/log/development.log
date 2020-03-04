@@ -6617,3 +6617,630 @@ Completed 200 OK in 54ms (Views: 4.7ms | ActiveRecord: 4.3ms | Allocations: 5872
 >>>>>>> 440565d4f9230d560cce2e91736fd054937e2cad
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7174802560429842870)[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUrlColumnToSpins (20200304191800)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "spins" ADD "url" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200304191800"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7174802560429842870)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (33.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_development"[0m
+  [1m[35m (31.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "WheelyGoodFood_test"[0m
+  [1m[35m (185.1ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_development" ENCODING = 'unicode'[0m
+  [1m[35m (68.4ms)[0m  [1m[35mCREATE DATABASE "WheelyGoodFood_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "url" character varying)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200304191800)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200228181004);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 20:23:43.709889"], ["updated_at", "2020-03-04 20:23:43.709889"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "c20c13aeaa177449a34d0334a2052b0059e02205"], ["created_at", "2020-03-04 20:23:43.715029"], ["updated_at", "2020-03-04 20:23:43.715029"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "spins" CASCADE[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "spins" ("id" bigserial primary key, "yelp_id" character varying, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "url" character varying)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200304191800)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200228181004);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-04 20:23:43.754663"], ["updated_at", "2020-03-04 20:23:43.754663"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-04 20:23:43.758573"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "c20c13aeaa177449a34d0334a2052b0059e02205"], ["created_at", "2020-03-04 20:23:43.762681"], ["updated_at", "2020-03-04 20:23:43.762681"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/yelp" for ::1 at 2020-03-04 15:24:09 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 1412ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6539)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:24:22 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"WIhm0W9197f_rRtDziq5qQ", "adapter"=>{"id"=>"WIhm0W9197f_rRtDziq5qQ"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.8ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "WIhm0W9197f_rRtDziq5qQ"], ["name", "Lombardi's Pizza"], ["created_at", "2020-03-04 20:24:24.177375"], ["updated_at", "2020-03-04 20:24:24.177375"], ["url", "https://www.yelp.com/biz/lombardis-pizza-new-york-4?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1681ms (Views: 0.8ms | ActiveRecord: 8.8ms | Allocations: 13349)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:24:36 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"WG639VkTjmK5dzydd1BBJA", "adapter"=>{"id"=>"WG639VkTjmK5dzydd1BBJA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "WG639VkTjmK5dzydd1BBJA"], ["name", "Rubirosa"], ["created_at", "2020-03-04 20:24:37.341702"], ["updated_at", "2020-03-04 20:24:37.341702"], ["url", "https://www.yelp.com/biz/rubirosa-new-york-2?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1222ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 8916)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:24:49 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"WIhm0W9197f_rRtDziq5qQ", "adapter"=>{"id"=>"WIhm0W9197f_rRtDziq5qQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "WIhm0W9197f_rRtDziq5qQ"], ["name", "Lombardi's Pizza"], ["created_at", "2020-03-04 20:24:50.563253"], ["updated_at", "2020-03-04 20:24:50.563253"], ["url", "https://www.yelp.com/biz/lombardis-pizza-new-york-4?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 745ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 8838)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:24:52 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2031)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:24:52 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1863)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 15:25:03 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"pizza", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"pizza", "price"=>"1"}}
+Completed 200 OK in 830ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 6397)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:25:12 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"2ggi1luerd3Mf_C82JvCYg", "adapter"=>{"id"=>"2ggi1luerd3Mf_C82JvCYg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "2ggi1luerd3Mf_C82JvCYg"], ["name", "Grimaldi's Pizzeria"], ["created_at", "2020-03-04 20:25:13.299563"], ["updated_at", "2020-03-04 20:25:13.299563"], ["url", "https://www.yelp.com/biz/grimaldis-pizzeria-brooklyn-4?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1149ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 8812)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 15:25:24 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"WIhm0W9197f_rRtDziq5qQ", "adapter"=>{"id"=>"WIhm0W9197f_rRtDziq5qQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "WIhm0W9197f_rRtDziq5qQ"], ["name", "Lombardi's Pizza"], ["created_at", "2020-03-04 20:25:25.215664"], ["updated_at", "2020-03-04 20:25:25.215664"], ["url", "https://www.yelp.com/biz/lombardis-pizza-new-york-4?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 891ms (Views: 0.9ms | ActiveRecord: 2.3ms | Allocations: 8818)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:28 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2543)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:28 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2540)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:34 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2540)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:34 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2540)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:49 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2541)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 15:25:49 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2540)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:04:14 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (1.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 2601)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:04:14 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2540)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:04:23 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1283ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 6677)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:04:31 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"t9WWw6ZDk7lLksrbrc8kgg", "adapter"=>{"id"=>"t9WWw6ZDk7lLksrbrc8kgg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (1.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "t9WWw6ZDk7lLksrbrc8kgg"], ["name", "Flaming Grill Supreme Buffet"], ["created_at", "2020-03-04 21:04:32.167481"], ["updated_at", "2020-03-04 21:04:32.167481"], ["url", "https://www.yelp.com/biz/flaming-grill-supreme-buffet-linden?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 633ms (Views: 0.9ms | ActiveRecord: 2.4ms | Allocations: 8885)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:07:59 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3204)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:07:59 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 3207)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:08:04 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1940ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6703)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:08:13 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"aw48wMOoqi4mVyH-0XyzAA", "adapter"=>{"id"=>"aw48wMOoqi4mVyH-0XyzAA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "aw48wMOoqi4mVyH-0XyzAA"], ["name", "Manna Sushi"], ["created_at", "2020-03-04 21:08:16.270605"], ["updated_at", "2020-03-04 21:08:16.270605"], ["url", "https://www.yelp.com/biz/manna-sushi-woodbridge-township-2?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 2714ms (Views: 1.0ms | ActiveRecord: 1.6ms | Allocations: 8973)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:09:55 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Started POST "/yelp" for ::1 at 2020-03-04 16:09:55 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1103ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 7961)
+
+
+Completed 200 OK in 1783ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:10:28 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 620ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6677)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:10:37 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"t9WWw6ZDk7lLksrbrc8kgg", "adapter"=>{"id"=>"t9WWw6ZDk7lLksrbrc8kgg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "t9WWw6ZDk7lLksrbrc8kgg"], ["name", "Flaming Grill Supreme Buffet"], ["created_at", "2020-03-04 21:10:38.528382"], ["updated_at", "2020-03-04 21:10:38.528382"], ["url", "https://www.yelp.com/biz/flaming-grill-supreme-buffet-linden?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 749ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8886)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:12:02 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3945)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:12:03 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3945)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:12:07 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 652ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6717)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:12:15 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"py2oAPcksHoXnCdtWPom9Q", "adapter"=>{"id"=>"py2oAPcksHoXnCdtWPom9Q"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "py2oAPcksHoXnCdtWPom9Q"], ["name", "Momotaro"], ["created_at", "2020-03-04 21:12:16.886547"], ["updated_at", "2020-03-04 21:12:16.886547"], ["url", "https://www.yelp.com/biz/momotaro-clark?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1180ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 9302)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:13:36 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 767ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6698)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:13:41 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 568ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6684)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:13:51 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"py2oAPcksHoXnCdtWPom9Q", "adapter"=>{"id"=>"py2oAPcksHoXnCdtWPom9Q"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "py2oAPcksHoXnCdtWPom9Q"], ["name", "Momotaro"], ["created_at", "2020-03-04 21:13:53.468503"], ["updated_at", "2020-03-04 21:13:53.468503"], ["url", "https://www.yelp.com/biz/momotaro-clark?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1567ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 9241)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:04 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (1.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 4782)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:04 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 4721)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:47 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 4721)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:47 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 4721)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:51 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 4721)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:28:51 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 4721)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:29:09 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 821ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6680)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:29:23 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"VdovT-A4je75Z7GMxsYbCA", "adapter"=>{"id"=>"VdovT-A4je75Z7GMxsYbCA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (1.0ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "VdovT-A4je75Z7GMxsYbCA"], ["name", "Wet Ticket Brewing"], ["created_at", "2020-03-04 21:29:24.316075"], ["updated_at", "2020-03-04 21:29:24.316075"], ["url", "https://www.yelp.com/biz/wet-ticket-brewing-rahway?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1101ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 8675)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:40:44 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (1.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 5517)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 16:40:44 -0500
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 5456)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 16:40:48 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 867ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6701)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 16:41:00 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"7HP3Jjx_M0C2Wus00d1Hxw", "adapter"=>{"id"=>"7HP3Jjx_M0C2Wus00d1Hxw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (1.0ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "7HP3Jjx_M0C2Wus00d1Hxw"], ["name", "Rahway Sushi"], ["created_at", "2020-03-04 21:41:00.865186"], ["updated_at", "2020-03-04 21:41:00.865186"], ["url", "https://www.yelp.com/biz/rahway-sushi-rahway?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 745ms (Views: 0.9ms | ActiveRecord: 2.2ms | Allocations: 8841)
+
+

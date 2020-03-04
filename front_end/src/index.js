@@ -163,6 +163,7 @@ function searchBusiness(indicatedSegment){
                 box.setAttribute("dataset-review-id", review.id);
                 review_box.append(box)
             })
+            yelp()
 
     })
 }//end of search business
@@ -179,4 +180,3 @@ function toggleWheelAndCard(){
 
 
 
-// 
