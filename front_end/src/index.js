@@ -110,10 +110,13 @@ function searchBusiness(indicatedSegment){
                 Reviews: 
                 <div id="reviews"></div>
 
-                MAP:
-                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>
+            
+
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
                 `
+                let map = document.getElementById("map")
+                map.innerHTML = `<iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>`
+
 
             //load thumbnails
             let thumbnails = document.getElementById('thumbnails');
