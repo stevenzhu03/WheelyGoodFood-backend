@@ -24,6 +24,7 @@ h1, h2, h3 {
 #banner {
     background-color: #D62828;
     overflow: auto;
+    height: 15vh;
 }
 
 #banner h1 {
@@ -51,9 +52,10 @@ h1, h2, h3 {
 #container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 85vh;
 }
 
+/* Left Side */
 
 #left-side {
     display: flex;
@@ -63,15 +65,58 @@ h1, h2, h3 {
     max-width: 15vw;
 }
 
-#left-side #recent{
-    /* display: flex; */
-    max-height: 50vh;
+#left-side #recent {
+    height: 42.5vh;
+    padding: 20px;
+    text-align: center;
+    list-style-type: none;
 }
 
-#left-side #popular{
-    /* display: flex; */
-    max-height: 50vh;
+#left-side #popular {
+    height: 42.5vh;
+    padding: 20px;
+    text-align: center;
+    list-style-type: none;
 }
+
+#left-side #recent p {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#left-side #popular p {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#left-side #recent ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+#left-side #popular ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+#left-side #recent ul li {
+    padding-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#left-side #popular ul li {
+    padding-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Google Maps */
 
 #map {
     display: flex;
@@ -81,9 +126,11 @@ h1, h2, h3 {
     max-width: 35vw;
 }
 
+/* Main Content */
+
 #content {
     display: flex;
-    background-color: #EAE2B7;
+    background-color: rgb(240, 234, 208);
     flex: 1;
     max-width: 50vw;
 }
