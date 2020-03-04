@@ -129,11 +129,9 @@ function searchBusiness(indicatedSegment){
             let reviews = document.getElementById('reviews');
             restaurant.reviews.forEach(review=>{
                 let review_box = document.getElementById("reviews")
-                let box = document.createElement("div")
-                box.innerHTML = `
-                <span class="yelp-review" data-review-id="${review.id}" data-hostname="www.yelp.com"></span>
-                Read <a href="https://www.yelp.com/user_details?userid=${review.user.id}" rel="nofollow noopener>"${review.user.name}</a>'s <a href="${review.url}" rel="nofollow noopener">review</a> of <a href="${review.url}" rel="nofollow noopener">${restaurant.business_info.name}</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a>
-                `
+                let box = document.createElement("span")
+                box.className = "yelp-review";
+                box.setAttribute("dataset-review-id", review.id);
                 review_box.append(box)
             })
 
@@ -150,3 +148,6 @@ function toggleWheelAndCard(){
 }
 
 
+
+
+// 
