@@ -55,12 +55,14 @@
     
                     <div id="price">
                         <select name="price" id="price">
-                          <option value="1">$</option>
-                          <option value="2">$$</option>
-                          <option value="3">$$$</option>
-                          <option value="4">$$$$</option>
+                            <option value="0">Any $</option>
+                            <option value="1">$</option>
+                            <option value="2">$$</option>
+                            <option value="3">$$$</option>
+                            <option value="4">$$$$</option>
                         </select>
                     </div>
+                    
                     
     
                   <div id="wheel-submit">
@@ -101,7 +103,7 @@
                               <br />
                               <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
                               <br /><br />
-                              &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
+                              <!-- &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset) -->
                           </div>
                       </td>
                       <td width="438" height="582" class="the_wheel" align="center" valign="center">
@@ -114,14 +116,14 @@
           </div>
           <script>
               let resultsArray = [
-                     {'fillStyle' : '#eae56f', 'text' : 'Buger King', "id": ""},
-                     {'fillStyle' : '#89f26e', 'text' : 'Taco Bell', "id": ""},
-                     {'fillStyle' : '#7de6ef', 'text' : 'Mcdonalds', "id": ""},
-                     {'fillStyle' : '#e7706f', 'text' : 'Chicfila', "id": ""},
-                     {'fillStyle' : '#eae56f', 'text' : 'Prize 5', "id": ""},
-                     {'fillStyle' : '#89f26e', 'text' : 'Prize 6', "id": ""},
-                     {'fillStyle' : '#7de6ef', 'text' : 'Prize 7', "id": ""},
-                     {'fillStyle' : '#e7706f', 'text' : 'Prize 8', "id": ""}
+                     {'fillStyle' : '#eae56f', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#89f26e', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#7de6ef', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#e7706f', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#eae56f', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#89f26e', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#7de6ef', 'text' : 'Spin again', "id": ""},
+                     {'fillStyle' : '#e7706f', 'text' : 'Spin again', "id": ""}
                   ];
               
               // Create new wheel object specifying the parameters at creation time.

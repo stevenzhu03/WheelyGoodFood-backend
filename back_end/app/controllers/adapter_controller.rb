@@ -3,7 +3,8 @@ class AdapterController < ActionController::API
     def yelp
         location = params[:location]
         type = params[:type]
-        results = Adapter.search(type, location)
+        price = params[:price]
+        results = Adapter.search(type, location, price)
 
         render json: results
     end

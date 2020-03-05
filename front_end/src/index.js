@@ -60,7 +60,13 @@ function postToBackEnd(form){
     .then(search => {
         // console.log(search)
         for (i=0; i < search.length; i++){
-            resultsArray[i]["text"] = search[i].name
+            //check if restaurant name is over 15 chars
+            if (search[i].name.length > 15){
+                let arr = search[i].name.split(" ")
+                resultsArray[i]["text"] = arr.slice(0, 2).join(" ")
+            }
+            else {resultsArray[i]["text"] = search[i].name}
+
             resultsArray[i]["id"] = search[i].id
         }
         let wheel = document.getElementById("wheel")
@@ -161,7 +167,7 @@ function searchBusiness(indicatedSegment){
                 box.setAttribute("dataset-review-id", review.id);
                 review_box.append(box)
             })
-            yelp()
+            resetWheel()
 
     })
 }//end of search business
