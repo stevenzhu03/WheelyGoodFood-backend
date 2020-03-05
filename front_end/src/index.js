@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", e =>{
         switch(true) {
             case(e.target.id === "yelp_search"):
                 e.preventDefault()
-                let form = e.target.parentNode
+                let form = document.getElementById("form")
                 postToBackEnd(form)
                 break;
         }
@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", e =>{
 })//end of DOMcontentloaded
 
 function postToBackEnd(form){
-
+    
     let location = form.location.value
     let type = form.type.value
     let price = form.price.value
