@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", e =>{
             content.forEach(restaurant =>{
 
             li = document.createElement("li")
-            li.innerHTML = `<a href=${restaurant.url} target="_blank">${restaurant.name}</a> Hits: ${restaurant.count}`
+            li.innerHTML = `<a href=${restaurant.url} target="_blank">${restaurant.name}</a> Hits: ${restaurant.spun}`
             popular.append(li)
         
         })
