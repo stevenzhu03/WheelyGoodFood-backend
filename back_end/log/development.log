@@ -10596,6 +10596,7 @@ Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 3967)
 Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 9797)
 
 
+<<<<<<< HEAD
 Started GET "/spins/recent" for ::1 at 2020-03-04 22:45:37 -0500
 Started GET "/spins/popular" for ::1 at 2020-03-04 22:45:37 -0500
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -10660,11 +10661,400 @@ Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 7763)
 
 Started GET "/spins/recent" for ::1 at 2020-03-04 22:49:44 -0500
 Started GET "/spins/popular" for ::1 at 2020-03-04 22:49:44 -0500
+=======
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:40:34 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:40:34 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (1.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 4178)
+
+
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 9798)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:40:41 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 761ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 6621)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:40:49 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"BOz0qTUMtAfljd3Vn1rerQ", "adapter"=>{"id"=>"BOz0qTUMtAfljd3Vn1rerQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "BOz0qTUMtAfljd3Vn1rerQ"], ["name", "Pado"], ["created_at", "2020-03-04 22:40:49.777287"], ["updated_at", "2020-03-04 22:40:49.777287"], ["url", "https://www.yelp.com/biz/pado-new-york?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 710ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 8853)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:41:00 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:41:00 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 3086)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 10607)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:41:03 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"", "type"=>"", "price"=>"1", "adapter"=>{"location"=>"", "type"=>"", "price"=>"1"}}
+Completed 200 OK in 179ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2618)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:41:06 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"", "type"=>"", "price"=>"1", "adapter"=>{"location"=>"", "type"=>"", "price"=>"1"}}
+Completed 200 OK in 152ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2614)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:41:07 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"", "type"=>"", "price"=>"1", "adapter"=>{"location"=>"", "type"=>"", "price"=>"1"}}
+Completed 200 OK in 153ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2614)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:41:12 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 705ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6590)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:41:19 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"pNe8ZCkGTe4cXfKdOF7kYQ", "adapter"=>{"id"=>"pNe8ZCkGTe4cXfKdOF7kYQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.6ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "pNe8ZCkGTe4cXfKdOF7kYQ"], ["name", "Ise Restaurant"], ["created_at", "2020-03-04 22:41:20.032910"], ["updated_at", "2020-03-04 22:41:20.032910"], ["url", "https://www.yelp.com/biz/ise-restaurant-new-york-3?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 752ms (Views: 0.9ms | ActiveRecord: 1.7ms | Allocations: 9134)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:41:39 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatiron school", "type"=>"buffet", "price"=>"1", "adapter"=>{"location"=>"flatiron school", "type"=>"buffet", "price"=>"1"}}
+Completed 200 OK in 817ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 6561)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:41:51 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"N23jOPszZfz7n0LcIIRm-g", "adapter"=>{"id"=>"N23jOPszZfz7n0LcIIRm-g"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "N23jOPszZfz7n0LcIIRm-g"], ["name", "Radha Govinda's"], ["created_at", "2020-03-04 22:41:51.676041"], ["updated_at", "2020-03-04 22:41:51.676041"], ["url", "https://www.yelp.com/biz/radha-govindas-denver?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 651ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 8942)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:42:00 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1", "adapter"=>{"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1"}}
+Completed 200 OK in 2379ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6553)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:42:10 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"AeLz0uoZH3hxmkcXlwUIGg", "adapter"=>{"id"=>"AeLz0uoZH3hxmkcXlwUIGg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "AeLz0uoZH3hxmkcXlwUIGg"], ["name", "Yip's"], ["created_at", "2020-03-04 22:42:11.288508"], ["updated_at", "2020-03-04 22:42:11.288508"], ["url", "https://www.yelp.com/biz/yips-new-york-4?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 745ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 8680)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:42:27 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1", "adapter"=>{"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1"}}
+Completed 200 OK in 702ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 6551)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:42:36 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"Xf6e3HaP0AgMBxY7dEDkOA", "adapter"=>{"id"=>"Xf6e3HaP0AgMBxY7dEDkOA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "Xf6e3HaP0AgMBxY7dEDkOA"], ["name", "99 Favor Taste"], ["created_at", "2020-03-04 22:42:37.460626"], ["updated_at", "2020-03-04 22:42:37.460626"], ["url", "https://www.yelp.com/biz/99-favor-taste-new-york-12?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1346ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 8888)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:42:45 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1", "adapter"=>{"location"=>"flatiron school ny", "type"=>"buffet", "price"=>"1"}}
+Completed 200 OK in 785ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6548)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:42:53 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"QSWH-i8I4Rp1mWvXRIaFqQ", "adapter"=>{"id"=>"QSWH-i8I4Rp1mWvXRIaFqQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "QSWH-i8I4Rp1mWvXRIaFqQ"], ["name", "Grand Seoul"], ["created_at", "2020-03-04 22:42:54.663916"], ["updated_at", "2020-03-04 22:42:54.663916"], ["url", "https://www.yelp.com/biz/grand-seoul-new-york-2?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 756ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8887)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:43:07 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 549ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6593)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:43:16 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"pqqhHTz_ZpApsaWGa_zMTA", "adapter"=>{"id"=>"pqqhHTz_ZpApsaWGa_zMTA"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "pqqhHTz_ZpApsaWGa_zMTA"], ["name", "Douska"], ["created_at", "2020-03-04 22:43:17.336518"], ["updated_at", "2020-03-04 22:43:17.336518"], ["url", "https://www.yelp.com/biz/douska-new-york?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 741ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 8775)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:43:31 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"BPZfuPvSxCfoppU4lPFm0Q", "adapter"=>{"id"=>"BPZfuPvSxCfoppU4lPFm0Q"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "BPZfuPvSxCfoppU4lPFm0Q"], ["name", "DOMODOMO - New York"], ["created_at", "2020-03-04 22:43:31.810376"], ["updated_at", "2020-03-04 22:43:31.810376"], ["url", "https://www.yelp.com/biz/domodomo-new-york-new-york-3?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 783ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 9185)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:43:37 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 1536ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6591)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:43:46 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"pNe8ZCkGTe4cXfKdOF7kYQ", "adapter"=>{"id"=>"pNe8ZCkGTe4cXfKdOF7kYQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "pNe8ZCkGTe4cXfKdOF7kYQ"], ["name", "Ise Restaurant"], ["created_at", "2020-03-04 22:43:47.714265"], ["updated_at", "2020-03-04 22:43:47.714265"], ["url", "https://www.yelp.com/biz/ise-restaurant-new-york-3?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1213ms (Views: 1.0ms | ActiveRecord: 1.5ms | Allocations: 9124)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:43:53 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:43:53 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 6068)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 18252)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:43:56 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:43:56 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 6068)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 18245)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:43:59 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:43:59 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 4882)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 18160)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:44:12 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:44:12 -0500
+>>>>>>> 24b96884aa61fffaf8eabdbdeaaf9dbaad1600c5
 Processing by SpinsController#recent as */*
 Processing by SpinsController#popular as */*
   [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
   ↳ app/controllers/spins_controller.rb:13:in `sort'
   [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+<<<<<<< HEAD
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1505)
 
 
@@ -10838,10 +11228,262 @@ Completed 200 OK in 462ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 889
 
 Started GET "/spins/recent" for ::1 at 2020-03-04 22:57:09 -0500
 Started GET "/spins/popular" for ::1 at 2020-03-04 22:57:09 -0500
+=======
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 4882)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 18160)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:44:19 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:44:19 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 6071)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 18248)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:44:26 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"masa", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"masa", "price"=>"1"}}
+Completed 200 OK in 947ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 6445)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:44:34 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"7EaiwMVaNdQibSs0yYkE5Q", "adapter"=>{"id"=>"7EaiwMVaNdQibSs0yYkE5Q"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "7EaiwMVaNdQibSs0yYkE5Q"], ["name", "Sushi Yasuda"], ["created_at", "2020-03-04 22:44:35.577817"], ["updated_at", "2020-03-04 22:44:35.577817"], ["url", "https://www.yelp.com/biz/sushi-yasuda-new-york?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1281ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 9036)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:44:47 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"t7BIiUN0tFg33kySuuQ0aQ", "adapter"=>{"id"=>"t7BIiUN0tFg33kySuuQ0aQ"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.4ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "t7BIiUN0tFg33kySuuQ0aQ"], ["name", "Masa"], ["created_at", "2020-03-04 22:44:48.188978"], ["updated_at", "2020-03-04 22:44:48.188978"], ["url", "https://www.yelp.com/biz/masa-new-york?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 783ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 9024)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:44:54 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:44:54 -0500
 Processing by SpinsController#recent as */*
 Processing by SpinsController#popular as */*
   [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
   ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 5319)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 20379)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:44:58 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:44:58 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 5308)
+
+
+  [1m[36mSpin Load (11.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 11.7ms | Allocations: 20378)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:45:46 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"", "type"=>"", "price"=>"1", "adapter"=>{"location"=>"", "type"=>"", "price"=>"1"}}
+Completed 200 OK in 192ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2619)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:45:50 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 585ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6695)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:45:57 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"J6m_-e_CKheyeYUQ1Rh1Vg", "adapter"=>{"id"=>"J6m_-e_CKheyeYUQ1Rh1Vg"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "J6m_-e_CKheyeYUQ1Rh1Vg"], ["name", "Dragonfly Restaurant & Bar"], ["created_at", "2020-03-04 22:45:58.118132"], ["updated_at", "2020-03-04 22:45:58.118132"], ["url", "https://www.yelp.com/biz/dragonfly-restaurant-and-bar-linden-2?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 613ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 8886)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:46:04 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:46:04 -0500
+>>>>>>> 24b96884aa61fffaf8eabdbdeaaf9dbaad1600c5
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+<<<<<<< HEAD
   [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1531)
 
@@ -11856,5 +12498,1029 @@ Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1545)
   [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
   ↳ app/models/spin.rb:16:in `block in spin_count'
 Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 10224)
+=======
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 5554)
+
+
+  [1m[36mSpin Load (3.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 21549)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:46:34 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:46:34 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 6800)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 21633)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:46:55 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:46:55 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (1.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 7115)
+
+
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 21630)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:47:08 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"nyc", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"nyc", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 724ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 6608)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:47:15 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"6lUsFj0KCao678o9L7QwUw", "adapter"=>{"id"=>"6lUsFj0KCao678o9L7QwUw"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "6lUsFj0KCao678o9L7QwUw"], ["name", "Hatsuhana Sushi Restaurant"], ["created_at", "2020-03-04 22:47:15.953881"], ["updated_at", "2020-03-04 22:47:15.953881"], ["url", "https://www.yelp.com/biz/hatsuhana-sushi-restaurant-new-york?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 797ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 9098)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:47:19 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:47:19 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:13:in `sort'
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 5787)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 22700)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:49:03 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:49:03 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:14:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 4.3ms | Allocations: 10360)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 82608ms (Views: 0.5ms | ActiveRecord: 8.7ms | Allocations: 64007)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:50:25 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:50:25 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.9ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  ↳ app/controllers/spins_controller.rb:14:in `sort'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 7085)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 2259ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 34779)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:50:33 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:50:33 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 996)
+
+
+  [1m[36mSpin Load (3.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  
+NoMethodError (undefined method `spin_count' for SpinsController:Class):
+  
+app/controllers/spins_controller.rb:4:in `popular'
+  ↳ app/controllers/spins_controller.rb:14:in `sort'
+Completed 200 OK in 35ms (Views: 0.6ms | ActiveRecord: 7.8ms | Allocations: 35699)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:50:42 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:50:42 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 992)
+
+
+  
+NoMethodError (undefined method `spin_count' for SpinsController:Class):
+  
+app/controllers/spins_controller.rb:4:in `popular'
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+Completed 200 OK in 37ms (Views: 1.0ms | ActiveRecord: 4.6ms | Allocations: 34667)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:50:44 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:50:44 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 983)
+
+
+  [1m[36mSpin Load (4.7ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  
+NoMethodError (undefined method `spin_count' for SpinsController:Class):
+  
+app/controllers/spins_controller.rb:4:in `popular'
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+Completed 200 OK in 66ms (Views: 0.7ms | ActiveRecord: 4.7ms | Allocations: 31686)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:50:58 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:50:58 -0500
+Processing by SpinsController#popular as */*
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mSpin Load (1.2ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 4.7ms | Allocations: 9998)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 11.8ms | Allocations: 26726)
+
+
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:52:28 -0500
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:52:28 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 5.0ms | Allocations: 6748)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  
+NoMethodError (undefined method `-@' for Wed, 04 Mar 2020 20:24:24 UTC +00:00:Time):
+  
+app/controllers/spins_controller.rb:12:in `block in recent'
+app/controllers/spins_controller.rb:12:in `sort'
+app/controllers/spins_controller.rb:12:in `recent'
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 8.4ms | Allocations: 49931)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:52:35 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:52:35 -0500
+Processing by SpinsController#recent as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 5.1ms | Allocations: 5957)
+
+
+  
+NoMethodError (undefined method `-@' for Wed, 04 Mar 2020 20:24:24 UTC +00:00:Time):
+  
+app/controllers/spins_controller.rb:12:in `block in recent'
+app/controllers/spins_controller.rb:12:in `sort'
+app/controllers/spins_controller.rb:12:in `recent'
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 20567)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:52:43 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:52:43 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.7ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 5.6ms | Allocations: 10311)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 10.6ms | Allocations: 26415)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:04 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:04 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.8ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 10.2ms | Allocations: 6547)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 22341)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:08 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:08 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1697)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 18494)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:16 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:16 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1702)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 18497)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:18 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:18 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.4ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.6ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 5.2ms | Allocations: 6235)
+
+
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 8.8ms | Allocations: 23709)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:22 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:22 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+  [1m[36mSpin Load (0.5ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1697)
+
+
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 19870)
+
+
+Started POST "/yelp" for ::1 at 2020-03-04 17:53:37 -0500
+Processing by AdapterController#yelp as JSON
+  Parameters: {"location"=>"rahway", "type"=>"sushi", "price"=>"1", "adapter"=>{"location"=>"rahway", "type"=>"sushi", "price"=>"1"}}
+Completed 200 OK in 985ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 6712)
+
+
+Started POST "/yelp/business" for ::1 at 2020-03-04 17:53:45 -0500
+Processing by AdapterController#yelpBusiness as JSON
+  Parameters: {"id"=>"py2oAPcksHoXnCdtWPom9Q", "adapter"=>{"id"=>"py2oAPcksHoXnCdtWPom9Q"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[36mSpin Create (0.5ms)[0m  [1m[32mINSERT INTO "spins" ("yelp_id", "name", "created_at", "updated_at", "url") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["yelp_id", "py2oAPcksHoXnCdtWPom9Q"], ["name", "Momotaro"], ["created_at", "2020-03-04 22:53:46.246898"], ["updated_at", "2020-03-04 22:53:46.246898"], ["url", "https://www.yelp.com/biz/momotaro-clark?adjust_creative=zlk3M5cgH7ylxPPumaEPGg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=zlk3M5cgH7ylxPPumaEPGg"]]
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adapter_controller.rb:15:in `yelpBusiness'
+Completed 200 OK in 1031ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 9244)
+
+
+Started GET "/spins/recent" for ::1 at 2020-03-04 17:53:51 -0500
+Started GET "/spins/popular" for ::1 at 2020-03-04 17:53:51 -0500
+Processing by SpinsController#recent as */*
+Processing by SpinsController#popular as */*
+  [1m[36mSpin Load (0.3ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/controllers/spins_controller.rb:12:in `sort'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1692)
+
+
+  [1m[36mSpin Load (2.1ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:17:in `uniq'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+  [1m[36mCACHE Spin Load (0.0ms)[0m  [1m[34mSELECT "spins".* FROM "spins"[0m
+  ↳ app/models/spin.rb:26:in `block in spin_count'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 20086)
+>>>>>>> 24b96884aa61fffaf8eabdbdeaaf9dbaad1600c5
 
 

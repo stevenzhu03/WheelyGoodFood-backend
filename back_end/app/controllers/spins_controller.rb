@@ -4,7 +4,6 @@ class SpinsController < ActionController::API
         result = Spin.spin_count 
         sorted = result.sort{|spin| spin.count}
         sorted = sorted[0...5]
-
         render json: sorted
     end
 
