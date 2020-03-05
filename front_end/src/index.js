@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", e =>{
                 e.preventDefault()
                 let form = document.getElementById("form")
                 postToBackEnd(form)
-                form.hidden = true
+                form.parentElement.remove()
                 break;
         }
     })//end of click listener
@@ -143,9 +143,14 @@ function searchBusiness(indicatedSegment){
             
 
                 <button onclick="toggleWheelAndCard()">Respin Wheel</button>
+                <button onclick="readdForm()">Search Again</button>
                 `
+
                 let map = document.getElementById("map")
-                map.innerHTML = `<iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>`
+                map.innerHTML = 
+                `
+                <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=${restaurant.business_info.location.display_address}&key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg" allowfullscreen></iframe>
+                `
 
 
             //load thumbnails
@@ -181,6 +186,49 @@ function toggleWheelAndCard(){
     wheel.hidden = !wheel.hidden
 }
 
+function readdForm(){
+    let newForm = document.createElement('div')
+    newForm.className = "search-box"
+    
+    newForm.innerHTML = `
+        <form id="form">
+            <div class="textbox">
+                <i class="fas fa-map-marked-alt"></i>
+                <input name="location" type="text" placeholder="location">
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-utensils"></i>
+                <input name="type" type="text" placeholder="type of food">
+            </div>
+
+            <div id="price">
+                <select name="price" id="price">
+                    <option value="0">Any $</option>
+                    <option value="1">$</option>
+                    <option value="2">$$</option>
+                    <option value="3">$$$</option>
+                    <option value="4">$$$$</option>
+                </select>
+            </div>
+            
+            
+
+            <div id="wheel-submit">
+                <!-- <input type="submit" value="SPIN THE WHEEL!" id="yelp_search"> -->
+                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Spin the Wheel</a> 
+            </div>
+        </form>
+    `
+
+    let content = document.getElementById('content')
+    content.prepend(newForm)
+
+    let card = document.getElementById("card")
+    let wheel = document.getElementById("wheel")
+    card.hidden = true
+    wheel.hidden = true
+}
 
 
 
