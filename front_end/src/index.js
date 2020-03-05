@@ -167,7 +167,7 @@ function searchBusiness(indicatedSegment){
                 box.setAttribute("dataset-review-id", review.id);
                 review_box.append(box)
             })
-            yelp()
+            resetWheel()
 
     })
 }//end of search business

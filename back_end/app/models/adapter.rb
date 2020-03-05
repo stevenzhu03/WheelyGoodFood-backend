@@ -13,15 +13,35 @@ class Adapter
  BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
  SEARCH_LIMIT = 8
 
-    def self.search(term, location="new york")
+    def self.search(term, location, price)
      url = "#{API_HOST}#{SEARCH_PATH}"
+
+    #default to restaurant if no term is entered
+    if term == ""
+      term = "restaurant"
+    end
+
+    #default to new york if no location is entered
+    if location == ""
+      location = "New York"
+    end
+
+    #default to all prices if any price is entered
+    if price == "0" 
+      price = "1,2,3,4"
+    end
+
+    
      params = {
        term: term,
        location: location,
-       limit: SEARCH_LIMIT
+       limit: SEARCH_LIMIT,
+       price: price
      }
      response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
      response.parse["businesses"]
+
+  
     end
 
     def self.business_reviews(business_id)
