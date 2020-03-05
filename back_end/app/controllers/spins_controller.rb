@@ -9,7 +9,7 @@ class SpinsController < ActionController::API
 
 
     def recent
-        result = Spin.all.sort{|spin| -spin.id}
+        result = Spin.all.sort_by{|spin| -spin.id}
         result = result[0...5]
 
         render json: result

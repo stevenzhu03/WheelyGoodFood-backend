@@ -32,9 +32,9 @@ window.addEventListener("DOMContentLoaded", e =>{
                 e.preventDefault()
                 let form = document.getElementById("form")
                 postToBackEnd(form)
+                form.hidden = true
                 break;
         }
-
     })//end of click listener
 
     

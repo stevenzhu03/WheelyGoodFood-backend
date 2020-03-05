@@ -22,7 +22,7 @@ h1, h2, h3 {
 }
 
 #banner {
-    background-color: #D62828;
+    background-color: rgb(235, 78, 78);
     overflow: auto;
     height: 15vh;
 }
@@ -60,7 +60,7 @@ h1, h2, h3 {
 #left-side {
     display: flex;
     flex-direction: column;
-    background-color: #FCBF49;
+    background-color: #E9C46A;
     flex: 1;
     max-width: 15vw;
 }
@@ -140,7 +140,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #003049;
+    background-color: #eeebe7;
     flex: 1;
     max-width: 50vw;
 }
@@ -155,27 +155,30 @@ h1, h2, h3 {
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #302822;
 }
 
 .textbox i {
     width: 26px;
     float: left;
     text-align: center;
-    color: white;
+    color: rgba(111, 62, 47, 0.762);
 }
 
 .textbox input {
     border: none;
     outline: none;
     background: none;
-    color: white;
+    color: rgba(55, 43, 43, 0.927);
     font-size: 18px;
     width: 80%;
     float: left;
     margin: 0 10px;
 }
 
+.textbox input::placeholder {
+    color: rgb(174, 164, 164);
+}
 
 /* Price Drop Down */
 
@@ -183,6 +186,20 @@ h1, h2, h3 {
     padding-top: 20px;
     text-align: center;
 }
+
+#price select {
+    background-color: #b57f2fd5;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
 
 
 
@@ -217,8 +234,8 @@ h1, h2, h3 {
 }
 
 .btn:active{
-  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
-  transform:translateY(-1px);
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
 }
 
 .btn-bottom-animation-1{
