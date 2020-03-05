@@ -23,7 +23,7 @@ h1, h2, h3 {
 
 #banner {
     background-color: rgb(235, 78, 78);
-    overflow: auto;
+    overflow: hidden;
     height: 15vh;
 }
 

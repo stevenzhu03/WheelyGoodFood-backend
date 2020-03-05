@@ -18,7 +18,7 @@
     <header>
         <div id="banner">
             <h1><span><i class="fas fa-hamburger"></i></span>  WHEELYGOODFOOD</h1>
-            <p id="banner-blurb">Lorem ipsum dolor sit.</p>
+            <p id="banner-blurb">Let the wheel decide your stomach</p>
         </div>
     </header>
 
@@ -45,7 +45,7 @@
                 <form id="form">
                     <div class="textbox">
                         <i class="fas fa-map-marked-alt"></i>
-                        <input name="location" type="text" placeholder="location">
+                        <input id='search_term' name="location" type="text" placeholder="location">
                     </div>
     
                     <div class="textbox">
@@ -67,7 +67,7 @@
     
                   <div id="wheel-submit">
                       <!-- <input type="submit" value="SPIN THE WHEEL!" id="yelp_search"> -->
-                      <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Spin the Wheel</a> 
+                      <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Bring on the Wheel!</a> 
                   </div>
                 </form>
             </div>
@@ -114,6 +114,10 @@
                   </tr>
               </table>
           </div>
+
+
+
+
           <script>
               let resultsArray = [
                      {'fillStyle' : '#eae56f', 'text' : 'Spin again', "id": ""},
@@ -235,6 +239,19 @@
 
 </div>
 
+
+
+
+<!-- google autocomplete -->
+<script>
+function activatePlacesSearch(){
+	var input = document.getElementById('search_term');
+	var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLJO5Se7usAdXjNZ4F6rwwV9K5xgyZNJg&libraries=places&callback=activatePlacesSearch"
+async defer></script>
 
 
 </body>

@@ -142,7 +142,7 @@ function searchBusiness(indicatedSegment){
 
             
 
-                <button onclick="toggleWheelAndCard()">Respin Wheel</button>
+                <button onclick="toggleWheelAndCard()" >Respin Wheel</button>
                 <button onclick="readdForm()">Search Again</button>
                 `
 
@@ -163,15 +163,7 @@ function searchBusiness(indicatedSegment){
                 thumbnails.append(pic)
             })
 
-            //load reviews 
-            let reviews = document.getElementById('reviews');
-            restaurant.reviews.forEach(review=>{
-                let review_box = document.getElementById("reviews")
-                let box = document.createElement("span")
-                box.className = "yelp-review";
-                box.setAttribute("dataset-review-id", review.id);
-                review_box.append(box)
-            })
+
             resetWheel()
 
     })
@@ -216,7 +208,7 @@ function readdForm(){
 
             <div id="wheel-submit">
                 <!-- <input type="submit" value="SPIN THE WHEEL!" id="yelp_search"> -->
-                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Spin the Wheel</a> 
+                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Bring on the Wheel!</a> 
             </div>
         </form>
     `
@@ -229,6 +221,7 @@ function readdForm(){
     card.hidden = true
     wheel.hidden = true
 }
+
 
 
 
