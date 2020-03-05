@@ -117,34 +117,45 @@ function searchBusiness(indicatedSegment){
                     hours[day.day] = `${day.start}-${day.end}`
                 })
     
-
+                
 
                 card.innerHTML=`
-                <h2><a href=${restaurant.business_info.url} target="_blank">${restaurant.business_info.name}</a></h2>
-                <img src=${restaurant.business_info.image_url} width="300" height="300">
-                Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
-                <h3> Rating: ${restaurant.business_info.rating} Stars</h3>
-                <h3> Phone Number: ${restaurant.business_info.phone} </h3>
-                <h3> Address: ${restaurant.business_info.location.display_address} </h3>
-                <div id="thumbnails"></div>
-                <br>
-                <table style="text-align: right"> 
-                <tr><th>Sunday</th><td>${hours[6]}</td></tr>
-                <tr><th>Monday</th><td>${hours[7]}</td></tr>
-                <tr><th>Tuesday</th><td>${hours[1]}</td></tr>
-                <tr><th>Wednesday</th><td>${hours[2]}</td></tr>
-                <tr><th>Thursday</th><td>${hours[3]}</td></tr>
-                <tr><th>Friday</th><td>${hours[4]}</td></tr>
-                <tr><th>Saturday</th><td>${hours[5]}</td></tr>
-                </table>
-                Reviews: 
-                <div id="reviews"></div>
+                <div id="card-title">
+                    <h2><a href=${restaurant.business_info.url} target="_blank">${restaurant.business_info.name}</a></h2>
+                </div>
 
-            
+                <div id="card-overall">
+                    <div id="card-images">
+                        <img src=${restaurant.business_info.image_url} width="300" height="300"><br><br>
+                        <div id="thumbnails"></div>
+                    </div>
 
-                <button onclick="toggleWheelAndCard()" >Respin Wheel</button>
-                <button onclick="readdForm()">Search Again</button>
+                    <div id="card-details">
+
+                        Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
+                        <h3> Rating: ${restaurant.business_info.rating} Stars</h3>
+                        <h3> Phone Number: ${restaurant.business_info.phone} </h3>
+                        <h3> Address: ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</h3>
+
+                        <table style="text-align: right"> 
+                        <tr><th>Sunday</th><td>${hours[6]}</td></tr>
+                        <tr><th>Monday</th><td>${hours[7]}</td></tr>
+                        <tr><th>Tuesday</th><td>${hours[1]}</td></tr>
+                        <tr><th>Wednesday</th><td>${hours[2]}</td></tr>
+                        <tr><th>Thursday</th><td>${hours[3]}</td></tr>
+                        <tr><th>Friday</th><td>${hours[4]}</td></tr>
+                        <tr><th>Saturday</th><td>${hours[5]}</td></tr>
+                        </table>
+                
+                        <button onclick="toggleWheelAndCard()">Respin Wheel</button>
+                        <button onclick="readdForm()">Search Again</button>
+
+                    </div>
+
+                </div>
                 `
+    
+
 
                 let map = document.getElementById("map")
                 map.innerHTML = 
@@ -162,7 +173,6 @@ function searchBusiness(indicatedSegment){
                 pic.width = "100"
                 thumbnails.append(pic)
             })
-
 
             resetWheel()
 
@@ -207,8 +217,7 @@ function readdForm(){
             
 
             <div id="wheel-submit">
-                <!-- <input type="submit" value="SPIN THE WHEEL!" id="yelp_search"> -->
-                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Bring on the Wheel!</a> 
+                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Spin the Wheel</a> 
             </div>
         </form>
     `

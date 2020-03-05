@@ -180,6 +180,10 @@ h1, h2, h3 {
     color: rgb(174, 164, 164);
 }
 
+#card {
+    overflow: auto;
+}
+
 /* Price Drop Down */
 
 #price {
@@ -199,9 +203,6 @@ h1, h2, h3 {
     appearance: button;
     outline: none;
 }
-
-
-
 
 /* Spin Wheel Button */
 
@@ -277,4 +278,45 @@ h1, h2, h3 {
   }
 }
 
+/* Content Card */
 
+#card {
+    flex-direction: column;
+}
+
+#card-title {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    padding-bottom: none;
+}
+
+#card-overall {
+    display: flex;
+    height: 75vh;
+}
+
+#card-images {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 20vw;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+#card-details {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 30vw;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+#card-title h2 a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
