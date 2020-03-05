@@ -1,5 +1,4 @@
 class Spin < ActiveRecord::Base
-    
 
     # def count
     #     count = 0
