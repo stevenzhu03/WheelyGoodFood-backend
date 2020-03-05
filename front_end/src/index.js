@@ -189,47 +189,9 @@ function toggleWheelAndCard(){
 }
 
 function readdForm(){
-    let newForm = document.createElement('div')
-    newForm.className = "search-box"
-    
-    newForm.innerHTML = `
-        <form id="form">
-            <div class="textbox">
-                <i class="fas fa-map-marked-alt"></i>
-                <input name="location" type="text" placeholder="location">
-            </div>
-
-            <div class="textbox">
-                <i class="fas fa-utensils"></i>
-                <input name="type" type="text" placeholder="type of food">
-            </div>
-
-            <div id="price">
-                <select name="price" id="price">
-                    <option value="0">Any $</option>
-                    <option value="1">$</option>
-                    <option value="2">$$</option>
-                    <option value="3">$$$</option>
-                    <option value="4">$$$$</option>
-                </select>
-            </div>
-            
-            
-
-            <div id="wheel-submit">
-                <a href="#" class="btn btn-white btn-animation-1" id="yelp_search">Spin the Wheel</a> 
-            </div>
-        </form>
-    `
-
-    let content = document.getElementById('content')
-    content.prepend(newForm)
-
-    let card = document.getElementById("card")
-    let wheel = document.getElementById("wheel")
-    card.hidden = true
-    wheel.hidden = true
+    location.reload()
 }
+
 
 
 
