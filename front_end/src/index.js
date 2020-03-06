@@ -114,7 +114,7 @@ function searchBusiness(indicatedSegment){
                 
                 let hours ={1: "Closed", 2: "Closed", 3: "Closed", 4: "Closed", 5: "Closed", 6: "Closed", 7: "Closed"}
                 restaurant.business_info.hours[0].open.forEach(day=>{
-                    hours[day.day] = `${day.start}-${day.end}`
+                    hours[day.day] = `${FormatTime(day.start)}-${FormatTime(day.end)}`
                 })
     
                 
@@ -133,8 +133,8 @@ function searchBusiness(indicatedSegment){
                     <div id="card-details">
 
                         Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
-                        <h3> Rating: ${restaurant.business_info.rating} Stars</h3>
-                        <h3> Phone Number: ${restaurant.business_info.phone} </h3>
+                        <h3> Rating: <img src="./assets/${restaurant.business_info.rating}.png"</h3>
+                        <h3> Phone Number: ${formatPhoneNumber(restaurant.business_info.phone)} </h3>
                         <h3> Address: ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</h3>
 
                         <table style="text-align: right"> 
@@ -192,6 +192,23 @@ function readdForm(){
     location.reload()
 }
 
+FormatTime = function (fourDigitTime){
+    var hours24 = parseInt(fourDigitTime.substring(0,2));
+    var hours = ((hours24 + 11) % 12) + 1;
+    var amPm = hours24 > 11 ? 'pm' : 'am';
+    var minutes = fourDigitTime.substring(2);
+    
+    return hours + ':' + minutes + amPm;
+};
 
 
+function formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      var intlCode = (match[1] ? '+1 ' : '')
+      return ['(', match[2], ') ', match[3], '-', match[4]].join('')
+    }
+    return null
+  }
 
