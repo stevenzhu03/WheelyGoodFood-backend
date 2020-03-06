@@ -131,12 +131,12 @@ function searchBusiness(indicatedSegment){
                     </div>
 
                     <div id="card-details">
-
-                    <h3> Rating: <img src="./assets/${restaurant.business_info.rating}.png"</h3>
-                    <h3> Phone Number: ${formatPhoneNumber(restaurant.business_info.phone)} </h3>
-                    <h3> Address: ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</h3>
-                    Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
                     
+                        <p> <span> Rating: </span> <img src="./assets/${restaurant.business_info.rating}.png" <span>&ensp;(${restaurant.business_info.review_count})</span></p>
+                        <p><span>Open Now? </span> ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed"}</p>
+                        <p> <span>Phone Number: </span>${formatPhoneNumber(restaurant.business_info.phone)} </p>
+                        <p> <span>Address:</span> ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</p>
+
                         <table style="text-align: right"> 
                         <tr><th>Sunday</th><td>${hours[6]}</td></tr>
                         <tr><th>Monday</th><td>${hours[7]}</td></tr>
@@ -147,8 +147,8 @@ function searchBusiness(indicatedSegment){
                         <tr><th>Saturday</th><td>${hours[5]}</td></tr>
                         </table>
                 
-                        <button onclick="toggleWheelAndCard()">Respin Wheel</button>
-                        <button onclick="readdForm()">Search Again</button>
+                        <button id="respin" onclick="toggleWheelAndCard()">Respin Wheel</button>
+                        <button id="re-search" onclick="readdForm()">Search Again</button>
 
                     </div>
 
