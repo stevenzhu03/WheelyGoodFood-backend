@@ -132,11 +132,11 @@ function searchBusiness(indicatedSegment){
 
                     <div id="card-details">
 
-                        Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
-                        <h3> Rating: <img src="./assets/${restaurant.business_info.rating}.png"</h3>
-                        <h3> Phone Number: ${formatPhoneNumber(restaurant.business_info.phone)} </h3>
-                        <h3> Address: ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</h3>
-
+                    <h3> Rating: <img src="./assets/${restaurant.business_info.rating}.png"</h3>
+                    <h3> Phone Number: ${formatPhoneNumber(restaurant.business_info.phone)} </h3>
+                    <h3> Address: ${restaurant.business_info.location.display_address[0]}, ${restaurant.business_info.location.display_address[1]}</h3>
+                    Open Now? ${restaurant.business_info.hours[0].is_open_now? "Open" : "Closed" }
+                    
                         <table style="text-align: right"> 
                         <tr><th>Sunday</th><td>${hours[6]}</td></tr>
                         <tr><th>Monday</th><td>${hours[7]}</td></tr>
