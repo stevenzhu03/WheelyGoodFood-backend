@@ -56,17 +56,17 @@ table.power th
 
 td.pw1
 {
-    background-color: #6fe8f0;
+    background-color: #056571;
 }
 
 td.pw2
 {
-    background-color: #86ef6f;
+    background-color: rgb(230, 191, 33);
 }
 
 td.pw3
 {
-    background-color: #ef6f6f;
+    background-color: #e43538;
 }
 
 /* Style applied to the spin button once a power has been selected */

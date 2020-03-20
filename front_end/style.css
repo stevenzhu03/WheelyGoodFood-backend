@@ -22,7 +22,7 @@ h1, h2, h3 {
 }
 
 #banner {
-    background-color: rgb(235, 78, 78);
+    background-color: #e43538;
     overflow: hidden;
     height: 15vh;
 }
@@ -60,7 +60,7 @@ h1, h2, h3 {
 #left-side {
     display: flex;
     flex-direction: column;
-    background-color: #E9C46A;
+    background-color: rgb(230, 191, 33);
     flex: 1;
     max-width: 15vw;
 }
@@ -121,12 +121,14 @@ h1, h2, h3 {
     padding-bottom: 25px;
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
+    color: #056571;
 }
 
 #left-side #popular ul li a {
     padding-bottom: 25px;
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
+    color: #056571;
 }
 
 #left-side #popular ul li a:hover {
@@ -346,9 +348,21 @@ h1, h2, h3 {
     font-size: 25px;
 }
 
+#card-details p {
+    padding: 20px 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
 #card-details p span {
     font-family: 'Raleway Black', sans-serif;
     font-weight: bold;
+}
+
+#card-details p img {
+    width: 150px;
+    height: auto;
+    margin-bottom: -4px;
 }
 
 #card-title h2 a {
@@ -356,6 +370,11 @@ h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     font-size: 40px;
+    color:#056571;
+}
+
+#card-title h2 a:hover {
+    color: white;
 }
 
 #respin {

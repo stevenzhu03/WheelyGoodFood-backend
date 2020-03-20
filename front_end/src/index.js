@@ -148,6 +148,7 @@ function searchBusiness(indicatedSegment){
                         </table>
                 
                         <button id="respin" onclick="toggleWheelAndCard()">Respin Wheel</button>
+                        &emsp; 
                         <button id="re-search" onclick="readdForm()">Search Again</button>
 
                     </div>
