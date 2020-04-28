@@ -6,7 +6,13 @@ class AdapterController < ActionController::API
         price = params[:price]
         results = Adapter.search(type, location, price)
 
-        render json: results
+        if results
+            render json: results
+        else 
+            render json: {errors: "No Restuarants Found"}
+        end
+
+
     end
 
     def yelpBusiness

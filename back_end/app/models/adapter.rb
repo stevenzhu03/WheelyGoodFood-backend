@@ -4,8 +4,7 @@ require "optparse"
 
 class Adapter
 
- # API_KEY = ENV['yelp_api_key']
- API_KEY ="6SkpxfmOou1-J6vUmaqqFPT4wtmjGiK1lsue9ZkqUCLqrv6-9k5Hxfhu1yTifwiRoXmF3QZVISyCmBaF0cW4IizoiRzmiBWb_yzkJVFmincW5Csi5YqlYBqx3zQnXnYx"    
+ API_KEY = ENV['yelp_key']  
     
  # Constants, do not change these
  API_HOST = "https://api.yelp.com"
